@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>于北往南的小屋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="与谁同坐，明月清风我">
+<meta property="og:type" content="website">
+<meta property="og:title" content="于北往南的小屋">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="于北往南的小屋">
+<meta property="og:description" content="与谁同坐，明月清风我">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="于北往南">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="于北往南的小屋" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">于北往南的小屋</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Java文件处理常用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/" class="article-date">
+  <time datetime="2023-02-17T11:07:01.000Z" itemprop="datePublished">2023-02-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/">Java文件处理常用方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java文件处理常用方法"><a href="#Java文件处理常用方法" class="headerlink" title="Java文件处理常用方法"></a>Java文件处理常用方法</h2><p>归纳整理一些常用的处理文件的方法</p>
+<h3 id="Java-Apache-FileUtils"><a href="#Java-Apache-FileUtils" class="headerlink" title="Java Apache FileUtils"></a>Java Apache FileUtils</h3><h4 id="Maven依赖引入"><a href="#Maven依赖引入" class="headerlink" title="Maven依赖引入"></a>Maven依赖引入</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="创建和删除文件"><a href="#创建和删除文件" class="headerlink" title="创建和删除文件"></a>创建和删除文件</h4><p>使用FileUtils.touch()创建一个新文件，并使用FileUtils.deleteQuietly()将其删除。<br>CreateDeleteFileEx.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.io.FileUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 25724</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2023/2/17 15:02</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> 创建和删除文件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CreateDeleteFileEx</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">myFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;src/main/resources/myFile.txt&quot;</span>);</span><br><span class="line">        FileUtils.touch(myFile);</span><br><span class="line">        <span class="keyword">if</span> (myFile.exists()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;The file exists&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;The file does not exist&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        FileUtils.deleteQuietly(myFile);</span><br><span class="line">        <span class="keyword">if</span> (myFile.exists()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;The file exists&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;The file does not exist&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/" data-id="clf98tg29000jd8oudu5mfbon" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" rel="tag">文件处理</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-常用插件备份" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/29/chang-yong-cha-jian-bei-fen/" class="article-date">
+  <time datetime="2022-07-29T10:12:27.000Z" itemprop="datePublished">2022-07-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vscode/">Vscode</a>►<a class="article-category-link" href="/categories/Vscode/%E6%8F%92%E4%BB%B6/">插件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/29/chang-yong-cha-jian-bei-fen/">常用插件备份</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Vscode插件备份"><a href="#Vscode插件备份" class="headerlink" title="Vscode插件备份"></a>Vscode插件备份</h2><p>Vscode插件备份</p>
+<h3 id="Auto-Close-Tag"><a href="#Auto-Close-Tag" class="headerlink" title="Auto Close Tag"></a>Auto Close Tag</h3><h3 id="Auto-Rename-Tag"><a href="#Auto-Rename-Tag" class="headerlink" title="Auto Rename Tag"></a>Auto Rename Tag</h3><h3 id="Blockman-Highlight-Nested-Code-Blocks"><a href="#Blockman-Highlight-Nested-Code-Blocks" class="headerlink" title="Blockman - Highlight Nested Code Blocks"></a>Blockman - Highlight Nested Code Blocks</h3><h3 id="Chinese-Simplified-简体中文-Language-Pack-for-Visual-Studio-Code"><a href="#Chinese-Simplified-简体中文-Language-Pack-for-Visual-Studio-Code" class="headerlink" title="Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code"></a>Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code</h3><h3 id="Class-autocomplete-for-HTML"><a href="#Class-autocomplete-for-HTML" class="headerlink" title="Class autocomplete for HTML"></a>Class autocomplete for HTML</h3><h3 id="Code-Runner"><a href="#Code-Runner" class="headerlink" title="Code Runner"></a>Code Runner</h3><h3 id="Color-Info"><a href="#Color-Info" class="headerlink" title="Color Info"></a>Color Info</h3><h3 id="CSS-Peek"><a href="#CSS-Peek" class="headerlink" title="CSS Peek"></a>CSS Peek</h3><h3 id="css-auto-prefix"><a href="#css-auto-prefix" class="headerlink" title="css-auto-prefix"></a>css-auto-prefix</h3><h3 id="Easy-Sass"><a href="#Easy-Sass" class="headerlink" title="Easy Sass"></a>Easy Sass</h3><h3 id="EditorConfig-for-VS-Code"><a href="#EditorConfig-for-VS-Code" class="headerlink" title="EditorConfig for VS Code"></a>EditorConfig for VS Code</h3><h3 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h3><h3 id="GitHub-Theme"><a href="#GitHub-Theme" class="headerlink" title="GitHub Theme"></a>GitHub Theme</h3><h3 id="GitLens-—-Git-supercharged"><a href="#GitLens-—-Git-supercharged" class="headerlink" title="GitLens — Git supercharged"></a>GitLens — Git supercharged</h3><h3 id="HTML-CSS-Support"><a href="#HTML-CSS-Support" class="headerlink" title="HTML CSS Support"></a>HTML CSS Support</h3><h3 id="IntelliSense-for-CSS-class-names-in-HTML"><a href="#IntelliSense-for-CSS-class-names-in-HTML" class="headerlink" title="IntelliSense for CSS class names in HTML"></a>IntelliSense for CSS class names in HTML</h3><h3 id="JavaScript-ES6-code-snippets"><a href="#JavaScript-ES6-code-snippets" class="headerlink" title="JavaScript (ES6) code snippets"></a>JavaScript (ES6) code snippets</h3><h3 id="koroFileHeader"><a href="#koroFileHeader" class="headerlink" title="koroFileHeader"></a>koroFileHeader</h3><h3 id="Live-Server"><a href="#Live-Server" class="headerlink" title="Live Server"></a>Live Server</h3><h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><h3 id="Markdown-All-in-One"><a href="#Markdown-All-in-One" class="headerlink" title="Markdown All in One"></a>Markdown All in One</h3><h3 id="Markdown-Extended"><a href="#Markdown-Extended" class="headerlink" title="Markdown Extended"></a>Markdown Extended</h3><h3 id="Markdown-Preview-Enhanced"><a href="#Markdown-Preview-Enhanced" class="headerlink" title="Markdown Preview Enhanced"></a>Markdown Preview Enhanced</h3><h3 id="markdownlint"><a href="#markdownlint" class="headerlink" title="markdownlint"></a>markdownlint</h3><h3 id="npm-Intellisense"><a href="#npm-Intellisense" class="headerlink" title="npm Intellisense"></a>npm Intellisense</h3><h3 id="Paste-Image"><a href="#Paste-Image" class="headerlink" title="Paste Image"></a>Paste Image</h3><h3 id="Path-Intellisense"><a href="#Path-Intellisense" class="headerlink" title="Path Intellisense"></a>Path Intellisense</h3><h3 id="Project-Manager"><a href="#Project-Manager" class="headerlink" title="Project Manager"></a>Project Manager</h3><h3 id="Stylelint"><a href="#Stylelint" class="headerlink" title="Stylelint"></a>Stylelint</h3><h3 id="Vetur"><a href="#Vetur" class="headerlink" title="Vetur"></a>Vetur</h3><h3 id="vscode-icons"><a href="#vscode-icons" class="headerlink" title="vscode-icons"></a>vscode-icons</h3><h3 id="vscode-json"><a href="#vscode-json" class="headerlink" title="vscode-json"></a>vscode-json</h3><h3 id="Vue-3-Snippets"><a href="#Vue-3-Snippets" class="headerlink" title="Vue 3 Snippets"></a>Vue 3 Snippets</h3><h3 id="Vue-Airbnb-Style-VSCode-Snippets"><a href="#Vue-Airbnb-Style-VSCode-Snippets" class="headerlink" title="Vue Airbnb Style VSCode Snippets"></a>Vue Airbnb Style VSCode Snippets</h3><h3 id="Vue-Language-Features-Volar"><a href="#Vue-Language-Features-Volar" class="headerlink" title="Vue Language Features (Volar)"></a>Vue Language Features (Volar)</h3><h3 id="Vue-Peek"><a href="#Vue-Peek" class="headerlink" title="Vue Peek"></a>Vue Peek</h3><h3 id="Vue-VSCode-Snippets"><a href="#Vue-VSCode-Snippets" class="headerlink" title="Vue VSCode Snippets"></a>Vue VSCode Snippets</h3><h3 id="vue-helper"><a href="#vue-helper" class="headerlink" title="vue-helper"></a>vue-helper</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/29/chang-yong-cha-jian-bei-fen/" data-id="clf98tg3e0030d8ou01xwdmn7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vscode/" rel="tag">Vscode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-常用链接备忘" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/29/chang-yong-lian-jie-bei-wang/" class="article-date">
+  <time datetime="2022-07-29T10:06:11.000Z" itemprop="datePublished">2022-07-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%93%BE%E6%8E%A5/">链接</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/29/chang-yong-lian-jie-bei-wang/">常用链接备忘</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="常用链接备忘"><a href="#常用链接备忘" class="headerlink" title="常用链接备忘"></a>常用链接备忘</h2><h3 id="聚合图床"><a href="#聚合图床" class="headerlink" title="聚合图床"></a>聚合图床</h3><p><a target="_blank" rel="noopener" href="https://www.superbed.cn/">https://www.superbed.cn/</a></p>
+<h3 id="冷熊简历"><a href="#冷熊简历" class="headerlink" title="冷熊简历"></a>冷熊简历</h3><p><a target="_blank" rel="noopener" href="http://cv.ftqq.com/">http://cv.ftqq.com/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/29/chang-yong-lian-jie-bei-wang/" data-id="clf98tg3f0033d8oud34sgupv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Windows系统修改jar内容" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/07/29/windows-xi-tong-xiu-gai-jar-nei-rong/" class="article-date">
+  <time datetime="2022-07-29T09:20:52.000Z" itemprop="datePublished">2022-07-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>►<a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/">Windows</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/29/windows-xi-tong-xiu-gai-jar-nei-rong/">Windows系统修改jar包中的文件或者依赖</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>应用的jar包在安全扫描时，发现不可信依赖，springboot依赖的tomcat几个包版本需要升级，现场环境是Linux，怎么进行依赖jar的替换，一搜一大把，就不赘述了。<br>可以参考如下链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://blog.csdn.net/Mr_7777777/article/details/125152748</span><br></pre></td></tr></table></figure>
+
+<p>本文主要说一下Windows系统，如何达到上述目的。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><p>下面是具体的操作步骤</p>
+<h4 id="打开windows命令窗口，查看jar命令是否可用"><a href="#打开windows命令窗口，查看jar命令是否可用" class="headerlink" title="打开windows命令窗口，查看jar命令是否可用"></a>打开windows命令窗口，查看jar命令是否可用</h4><p><img src="https://pic.imgdb.cn/item/62e33bcaf54cd3f937109bf3.png" alt="avatar"><br>如果提示，<code>jar</code>不是内部或外部命令，也不是可运行的程序，则需要进行环境便的配置</p>
+<h5 id="jar环境变量配置"><a href="#jar环境变量配置" class="headerlink" title="jar环境变量配置"></a>jar环境变量配置</h5><p>可以参考如下链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://blog.csdn.net/sinat_20593627/article/details/109613547</span><br></pre></td></tr></table></figure>
+
+<p>如果是java1.8版本，会提示<code>bin\jlink.exe</code>不是内部或外部命令，也不是可运行的程序，这个忽略即可。</p>
+<h4 id="解压jar包并手动替换，然后再重新打包"><a href="#解压jar包并手动替换，然后再重新打包" class="headerlink" title="解压jar包并手动替换，然后再重新打包"></a>解压jar包并手动替换，然后再重新打包</h4><ul>
+<li><p>解压原jar包</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jar -xvf xxx.jar</span><br></pre></td></tr></table></figure></li>
+<li><p>手动替换文件或者依赖</p>
+</li>
+<li><p>重新打包</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jar -cfM0 test.jar BOOT-INF/ META-INF/ org/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>以上就是所有内容，主要就是jar这个命令，其实是不区分操作系统，Linux和Windows系统的区别也就是删除和替换操作，解压和打包其实是一致的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/29/windows-xi-tong-xiu-gai-jar-nei-rong/" data-id="clf98tg320022d8ou1hdhe221" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jar%E5%8C%85/" rel="tag">jar包</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css学习四" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/09/css-xue-xi-si/" class="article-date">
+  <time datetime="2022-04-09T10:00:37.000Z" itemprop="datePublished">2022-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/09/css-xue-xi-si/">css学习四</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>继续</p>
+<h3 id="outline"><a href="#outline" class="headerlink" title="outline"></a>outline</h3><p>设置轮廓属性，不占用空间</p>
+<ul>
+<li><code>outline-color</code>：轮廓颜色</li>
+<li><code>out-style</code>：样式<ul>
+<li><code>none</code>：默认，不设置样式</li>
+<li><code>dotted</code>：点状</li>
+<li><code>dashed</code>：虚线</li>
+<li><code>solid</code>：实线</li>
+<li><code>double</code>：双实线</li>
+<li><code>groove</code>：3D凹槽</li>
+<li><code>ridge</code>：3D垄状</li>
+<li><code>inset</code>：陷入</li>
+<li><code>ouset</code>：突出</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><code>out-width</code>：轮廓宽带</li>
+</ul>
+<h3 id="display-visibility"><a href="#display-visibility" class="headerlink" title="display visibility"></a>display visibility</h3><p><code>display</code>设置一个元素如何显示，设置<code>none</code>时，元素会被隐藏且不占用空间，但是不会被继承<br><code>visibility</code>知道一个元素可见还是隐藏，设置为<code>hidden</code>时，元素会被隐藏但空间仍被占用，可以被继承</p>
+<h4 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h4><ul>
+<li><code>block</code>：会独占一行，多个元素会另起一行，可以设置<code>width</code>、<code>height</code>、<code>margin</code>、<code>padding</code>属性</li>
+<li><code>inline</code>：不会独占一行，设置<code>width</code>、<code>height</code>属性无效，可以设置水平方向的<code>margin</code>和<code>padding</code>属性，不能设置垂直方向的<code>padding</code>和<code>margin</code></li>
+<li><code>inline-block</code>：将对象设置为<code>inline</code>对象，但对象的内容作为<code>block</code>对象呈现，之后的内联对象会被排列在同一行内。</li>
+</ul>
+<h4 id="行内元素和块级元素"><a href="#行内元素和块级元素" class="headerlink" title="行内元素和块级元素"></a>行内元素和块级元素</h4><ul>
+<li>行内元素<ul>
+<li>设置宽度无效</li>
+<li>可以设置水平方向的<code>margin</code>和<code>padding</code>属性，但不能设置垂直方向的<code>padding</code>和<code>margin</code>属性</li>
+<li>不会自动换行</li>
+</ul>
+</li>
+<li>块级元素<ul>
+<li>可以设置宽度</li>
+<li>设置<code>margin</code>和<code>padding</code>都可以</li>
+<li>可以自动换行</li>
+<li>多个块级元素，默认排列从上到下</li>
+</ul>
+</li>
+</ul>
+<h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3><p><code>absolute</code>：生成绝对定位的元素，相对于<code>static</code>定位以外的一个父元素进行定位。<br>元素的位置通过<code>left、top、right、bottom</code>属性进行规定。<br>浏览器会递归查找该元素的所有父元素，如果找到了设置<code>position：relative/absolute/fixed</code>的元素，就以该元素为基准定位，如果没找到，就以浏览器的边界进行定位</p>
+<p><code>relative</code>：生成相对定位的元素，相对于其原来的位置进行定位。元素的位置通过<code>left、top、right、bottom</code>属性进行规定。<code>relative</code>永远都相对于自身位置进行定位，与其他元素无关，也不会影响其他元素。</p>
+<p><code>fiexd</code>：生成绝对定位的元素，相对于屏幕视口（viewport）进行定位，元素的位置在屏幕滚动时并不会改变，回到顶部的按钮一般用这种方式进行定位</p>
+<p><code>static</code>：默认值，没有定位，会忽略<code>top、bottom、left、rioght</code>或者<code>z-index</code>属性。块级元素从上往下排布，行级元素从左到右排列</p>
+<h4 id="absolute和fixed比较"><a href="#absolute和fixed比较" class="headerlink" title="absolute和fixed比较"></a>absolute和fixed比较</h4><p>共同点：</p>
+<ul>
+<li><p>改变行内元素的呈现方式，将<code>display</code>置为<code>inline-block</code></p>
+</li>
+<li><p>使元素脱离普通文档流，不再占用文档物理空间</p>
+</li>
+<li><p>覆盖非定位文档元素<br>不同点：</p>
+</li>
+<li><p><code>absolute</code>和<code>fixed</code>根元素不同，<code>absolute</code>的根元素可以设置，<code>fixed</code>的根元素是浏览器</p>
+</li>
+<li><p>在有滚动条的页面中，a<code>bsolute</code>会跟着父元素移动，<code>fiexd</code>固定在页面的具体位置不变</p>
+</li>
+</ul>
+<h3 id="display-float-position-关系"><a href="#display-float-position-关系" class="headerlink" title="display float position 关系"></a>display float position 关系</h3><ul>
+<li>首先判断<code>display</code>属性是否为<code>none</code>，如果为<code>none</code>，则<code>position</code>和<code>float</code>属性的值不影响元素最后的表现</li>
+<li>然后判断<code>position</code>的值是否为<code>absolute</code>或者fixed，如果是，则<code>float</code>属性失效，并且<code>displa</code>y的值应该被设置为<code>table</code>或者<code>block</code></li>
+<li>如果<code>position</code>的值补位<code>absolute</code>或者<code>fixed</code>，则判断<code>float</code>属性的值是否为<code>none</code>，如果不是，则<code>display</code>的值则按上面的规则转换。注意，如果<code>position</code>的值为<code>relative</code>并且<code>float</code>属性的值存在，则<code>relative</code>相对于浮动后的最终位置定位</li>
+<li>如果<code>float</code>的值为<code>none</code>，则判断元素是否为根元素，如果是根元素则<code>display</code>属性按照上面的规则转换，如果不是，则保持指定的<code>display</code>属性值不变</li>
+</ul>
+<p>总的来说，可以把它看作是类似优先级的机制，<code>position:absolute</code>和<code>position:fixed</code>优先级最高，有它存在对的时候，浮动不起作用，<code>display</code>的值也需要调整。其次，元素的<code>float</code>特性的值不是<code>none</code>的时候或者它是根元素的时候，调整<code>display</code>的值。最后，非根元素，并且非浮动元素，并且非绝对定位的元素，<code>display</code>特性值同设置值</p>
+<h3 id="一与人同，未免屈意以循之😜😜😜"><a href="#一与人同，未免屈意以循之😜😜😜" class="headerlink" title="一与人同，未免屈意以循之😜😜😜"></a>一与人同，未免屈意以循之😜😜😜</h3><p><strong><font size=4>临江仙</font></strong> <font size=1>送钱穆父</font> <font size=2>苏轼</font></p>
+<p><strong>一别都门三改火，</strong></p>
+<p><em>天涯踏尽红尘。</em></p>
+<p><strong>依然一笑作春温，</strong></p>
+<p><em>无波真古井，</em></p>
+<p><strong>有节是秋筠。</strong></p>
+<p><em>惆怅孤帆连夜发，</em></p>
+<p><strong>送行淡月微云。</strong></p>
+<p><em>尊前不用翠眉颦。</em></p>
+<p><strong>人生如逆旅，</strong></p>
+<p><em>我亦是行人。</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/09/css-xue-xi-si/" data-id="clf98tg39002md8ou8tej6qbq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css学习三" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/05/css-xue-xi-san/" class="article-date">
+  <time datetime="2022-04-05T11:18:10.000Z" itemprop="datePublished">2022-04-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/05/css-xue-xi-san/">css学习三</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS-学习三"><a href="#CSS-学习三" class="headerlink" title="CSS 学习三"></a>CSS 学习三</h2><p>继续</p>
+<h3 id="CSS-Fonts"><a href="#CSS-Fonts" class="headerlink" title="CSS Fonts"></a>CSS Fonts</h3><ul>
+<li><p><code>font-family</code>：指定字体</p>
+</li>
+<li><p><code>font-size</code>：字体大小</p>
+</li>
+<li><p><code>font-style</code>：字体样式</p>
+<ul>
+<li><code>normal</code>：默认值</li>
+<li><code>italic</code>：斜体</li>
+<li><code>oblique</code>：斜体</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>font-variant</code>：将小写字母转为大写，但是字体尺寸更小</p>
+<ul>
+<li><code>normal</code>：默认值，不做任何样式调整</li>
+<li><code>small-caps</code>：小型大写字母的字体</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>font-weight</code>：字体的粗细</p>
+<ul>
+<li><code>normal</code>：默认</li>
+<li><code>bold</code>：粗体</li>
+<li><code>bloder</code>：更粗的粗体</li>
+<li><code>lighter</code>：更细的字体</li>
+<li><code>数字</code>：400等于normal，700等于bold</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+</ul>
+<h3 id="CSS-Link"><a href="#CSS-Link" class="headerlink" title="CSS Link"></a>CSS Link</h3><ul>
+<li><code>a:link</code>：未访问链接</li>
+<li><code>a:visited</code>：已访问链接</li>
+<li><code>a:hover</code>：鼠标移动到链接上</li>
+<li><code>a:active</code>：鼠标点击时</li>
+</ul>
+<h3 id="CSS-列表"><a href="#CSS-列表" class="headerlink" title="CSS 列表"></a>CSS 列表</h3><ul>
+<li><code>list-style-image</code>：将图像设置为列表标志</li>
+<li><code>list-style-position</code>：标志位置<ul>
+<li><code>outside</code>：放置在文本以内，并环绕文本对齐</li>
+<li><code>inside</code>：放置文本左侧（默认），列表项目标记放置在文本以外，且环绕文本不根据标记对齐</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+</ul>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>封装周围的HTML元素，包括边距、边框、填充和内容</p>
+<ul>
+<li><code>Margin</code>：外边距，透明，用以清除边框外的区域</li>
+<li><code>Boder</code>：边框</li>
+<li><code>Padding</code>：内边距，透明，用以清除内容周围的区域</li>
+<li><code>Content</code>：内容</li>
+</ul>
+<h3 id="CSS-Border"><a href="#CSS-Border" class="headerlink" title="CSS Border"></a>CSS Border</h3><ul>
+<li><p><code>boder-style</code>：设置四个边框的样式</p>
+<ul>
+<li><code>none</code>：无边框，优先级最低，如果存在重叠边框，会显示为其他边框</li>
+<li><code>hidden</code>：无边框，优先级最高，如果存在重叠边框，则不显示边框</li>
+<li><code>dotted</code>：点状</li>
+<li><code>dashed</code>：虚线</li>
+<li><code>solid</code>：实线</li>
+<li><code>double</code>：双实线</li>
+<li><code>groove</code>：3D凹槽</li>
+<li><code>ridge</code>：3D垄状</li>
+<li><code>inset</code>：陷入</li>
+<li><code>ouset</code>：突出</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>border-width</code>：设置四个边框的宽度</p>
+<ul>
+<li><code>thin</code>：细边框</li>
+<li><code>medium</code>：中等边框（默认）</li>
+<li><code>thick</code>：粗边框</li>
+<li><code>length</code>：自定义值</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>boder-color</code>：设置四个边框颜色</p>
+<ul>
+<li><code>color</code>：指定颜色</li>
+<li><code>transparent</code>：透明（默认）</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>border-radius</code>：外边框圆角</p>
+</li>
+</ul>
+<p>瑞了瑞了，满脑子英文单词</p>
+<h3 id="美则美矣，未尽善焉😕😕😕"><a href="#美则美矣，未尽善焉😕😕😕" class="headerlink" title="美则美矣，未尽善焉😕😕😕"></a>美则美矣，未尽善焉😕😕😕</h3><p><strong><font size=4>浪淘沙</font></strong></font> <font size=2>欧阳修</font></p>
+<p><strong>把酒祝东风，</strong></p>
+<p><em>且共从容。</em></p>
+<p><strong>垂杨紫陌洛城东。</strong></p>
+<p><em>总是当时携手处，</em></p>
+<p><strong>游遍芳丛。</strong></p>
+<p><em>聚散苦匆匆，</em></p>
+<p><strong>此恨无穷。</strong></p>
+<p><em>今年花胜去年红。</em></p>
+<p><strong>可惜明年花更好，</strong></p>
+<p><em>知与谁同？</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/05/css-xue-xi-san/" data-id="clf98tg37002fd8ou7ty02i7u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css学习二" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/04/css-xue-xi-er/" class="article-date">
+  <time datetime="2022-04-04T08:52:38.000Z" itemprop="datePublished">2022-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/04/css-xue-xi-er/">css学习二</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS-学习二"><a href="#CSS-学习二" class="headerlink" title="CSS 学习二"></a>CSS 学习二</h2><p>继续</p>
+<h3 id="CSS-单位"><a href="#CSS-单位" class="headerlink" title="CSS 单位"></a>CSS 单位</h3><h4 id="相对长度"><a href="#相对长度" class="headerlink" title="相对长度"></a>相对长度</h4><ul>
+<li><code>em</code>：当前元素的字体尺寸</li>
+<li><code>ex</code>：英文字母小x的高度</li>
+<li><code>ch</code>：数字0的高度</li>
+<li><code>vw</code>：视窗宽度，1vm=视窗宽度的1%</li>
+<li><code>vh</code>：视窗高度，1vm=视窗高度的1%</li>
+<li><code>vmin</code>：vm和vh中较小的那个</li>
+<li><code>vmax</code>：vm和vh中较大的那个</li>
+<li><code>%</code>：😁😁😁</li>
+</ul>
+<h4 id="绝对长度"><a href="#绝对长度" class="headerlink" title="绝对长度"></a>绝对长度</h4><ul>
+<li><code>cm</code>：厘米</li>
+<li><code>mm</code>：毫米</li>
+<li><code>in</code>：英寸</li>
+<li><code>px</code>：像素</li>
+<li><code>pt</code>：1pt = 1/72in</li>
+<li><code>pc</code>：1pc = 12 pt</li>
+</ul>
+<h3 id="CSS-Text"><a href="#CSS-Text" class="headerlink" title="CSS Text"></a>CSS Text</h3><ul>
+<li><p><code>color</code>：设置文本颜色</p>
+</li>
+<li><p><code>direction</code>：设置文字方向</p>
+<ul>
+<li><code>ltr</code>：从左向右（默认）</li>
+<li><code>rtl</code>：从右向左</li>
+<li><code>ingerit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>letter-spacing</code>：设置字符间距</p>
+<ul>
+<li><code>noraml</code>：字符间没有额外的空间</li>
+<li><code>length</code>：使用固定空间（可以为负值）</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>line-height</code>：设置行间距</p>
+<ul>
+<li><code>normal</code>：默认</li>
+<li><code>number</code>：设置数字，会与字体尺寸相乘得到行间距</li>
+<li><code>length</code>：固定值</li>
+<li><code>%</code>：字体尺寸的百分比为行间距</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>text-align</code>：文本的水平对齐方式</p>
+<ul>
+<li><code>left</code>：左对齐（默认）</li>
+<li><code>right</code>：右对齐</li>
+<li><code>center</code>：居中</li>
+<li><code>justify</code>：两端对齐</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>text-decoration</code>：添加文本修饰</p>
+<ul>
+<li><code>none</code>：无修饰（默认）</li>
+<li><code>underline</code>：下划线</li>
+<li><code>overline</code>：上划线</li>
+<li><code>line-through</code>：删除线</li>
+<li><code>blink</code>：闪烁效果</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>text-indent</code>：首行缩进</p>
+<ul>
+<li><code>length</code>：固定缩进</li>
+<li><code>%</code>：基于父元素宽度的百分比缩进</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>text-shadow</code>：文本阴影</p>
+<ul>
+<li><code>h-shadow</code>：必需，允许负值，水平阴影位置</li>
+<li><code>v-shadow</code>：必需，允许负值，垂直阴影位置</li>
+<li><code>blur</code>：模糊的距离</li>
+<li><code>color</code>：阴影的颜色</li>
+</ul>
+</li>
+<li><p><code>text-transform</code>：字母样式</p>
+<ul>
+<li><code>none</code>：默认</li>
+<li><code>capitalize</code>：每个单词以大写字母开头</li>
+<li><code>uppercase</code>：全部大写</li>
+<li><code>lowercase</code>：全部小写</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>unicode-bidi</code>：是否重写文本，需要配合<code>direction</code>使用</p>
+<ul>
+<li><code>normal</code>：默认</li>
+<li><code>embed</code>：创建一个附加的嵌入层面</li>
+<li><code>bidi-override</code>：创建一个附加的嵌入层面，按照<code>direction</code>属性重新排序</li>
+<li><code>initial</code>：设置默认值</li>
+<li><code>inherit</code>：继承父元素<br>这里<code>embed</code>属性和<code>normal</code>属性如果单独使用，最终样式看来是没有区别的。<br>但是<code>embed</code>会创建一个附加的嵌入层面，因为在<code>bidi-override</code>属性值里面，<code>normal</code>是不会起作用的，因为<code>bidi-override</code>也创建了一个嵌入层面，这个时候就可以使用<code>embed</code>了</li>
+</ul>
+</li>
+<li><p><code>vertical-align</code>：文本的垂直对齐方式</p>
+<ul>
+<li><code>baseline</code>：默认</li>
+<li><code>sub</code>：垂直对齐文本下标</li>
+<li><code>super</code>：垂直对齐文本上标</li>
+<li><code>top</code>：元素顶端与行中最高元素的顶端对齐</li>
+<li><code>text-top</code>：元素顶端与父元素字体的顶端对齐</li>
+<li><code>middle</code>：元素放于父元素的中部</li>
+<li><code>bottom</code>：使元素及其后代元素的底部与整行的底部对齐</li>
+<li><code>text-bottom</code>：元素底端与父元素字体的底端对齐</li>
+<li><code>length</code>：使元素的基线对齐到父元素的基线之上的给定长度。可以是负数。</li>
+<li><code>%</code>：使用 “line-height” 属性的百分比值来排列此元素。允许使用负值。</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>white-space</code>：空白处理方式</p>
+<ul>
+<li><p><code>noraml</code>：连续的空白符会被合并，换行符会被当作空白符来处理</p>
+</li>
+<li><p><code>nowwrap</code>：和 normal 一样，连续的空白符会被合并。但文本内的换行无效</p>
+</li>
+<li><p><code>pre</code>：连续的空白符会被保留。在遇到换行符或者<code>&lt;br&gt;</code>元素时才会换行</p>
+</li>
+<li><p><code>pre-wrap</code>：连续的空白符会被保留。在遇到换行符或者<code>&lt;br&gt;</code>元素时才会换行</p>
+</li>
+<li><p><code>pre-line</code>：连续的空白符会被合并。在遇到换行符或者<code>&lt;br&gt;</code>元素时会换行</p>
+</li>
+<li><p><code>inherit</code>：继承父元素</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>换行符</th>
+<th>空格和制表符</th>
+<th>文字换行</th>
+<th>行尾空格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>normal</code></td>
+<td>合并</td>
+<td>合并</td>
+<td>换行</td>
+<td>删除</td>
+</tr>
+<tr>
+<td><code>nowwrap</code></td>
+<td>合并</td>
+<td>合并</td>
+<td>不换行</td>
+<td>删除</td>
+</tr>
+<tr>
+<td><code>pre</code></td>
+<td>保留</td>
+<td>保留</td>
+<td>不换行</td>
+<td>保留</td>
+</tr>
+<tr>
+<td><code>pre-wrap</code></td>
+<td>保留</td>
+<td>保留</td>
+<td>换行</td>
+<td>挂起</td>
+</tr>
+<tr>
+<td><code>pre-line</code></td>
+<td>保留</td>
+<td>保留</td>
+<td>换行</td>
+<td>换行</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p><code>word-spacing</code>：字间距</p>
+<ul>
+<li><code>normal</code>：默认，使用标准空间</li>
+<li><code>length</code>：使用指定空间</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+</ul>
+<p>瑞了瑞了！！！</p>
+<h3 id="有垣曰苑，无垣曰囿😉😉"><a href="#有垣曰苑，无垣曰囿😉😉" class="headerlink" title="有垣曰苑，无垣曰囿😉😉"></a>有垣曰苑，无垣曰囿😉😉</h3><p><strong><font size=4>临江仙</font></strong> <font size=1>夜归临皋</font> <font size=2>苏轼</font></p>
+<p><strong>夜饮东坡醒复醉，</strong></p>
+<p><em>归来仿佛三更。</em></p>
+<p><strong>家童鼻息已雷鸣。</strong></p>
+<p><em>敲门都不应，</em></p>
+<p><strong>倚杖听江声。</strong></p>
+<p><em>长恨此身非我有，</em></p>
+<p><strong>何时忘却营营？</strong></p>
+<p><em>夜阑风静彀纹平。</em></p>
+<p><strong>小舟从此逝，</strong></p>
+<p><em>江海寄余生。</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/04/css-xue-xi-er/" data-id="clf98tg38002id8ou2oupafb4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-css学习一" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/03/css-xue-xi-yi/" class="article-date">
+  <time datetime="2022-04-03T09:55:57.000Z" itemprop="datePublished">2022-04-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/03/css-xue-xi-yi/">css学习一</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS-学习一"><a href="#CSS-学习一" class="headerlink" title="CSS 学习一"></a>CSS 学习一</h2><p>从涉及前端开发到现在，差不多有四年了，框架有<code>Vue</code>、<code>Angular</code>，组件库用了<code>ElementUI</code>、<code>NG-Zorro</code>、<code>Ant-Design</code>。<br>而对于<code>CSS</code>，可谓东一榔头，西一棒子，用时查找，不用忘掉。这次决定花点时间，系统的学习一下<code>CSS</code>，毕竟上一次学，还是大二的时候。（我逝去的青春啊！！😭😭）</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>层叠样式表，用于设计<code>HTML</code>的风格和布局，字体、颜色、大小、间距等等。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>CSS</code>由两部分组成：选择器，以及声明。<br>一个熟悉与值的键值被称为声明，而将一个或者多个声明用<code>&#123;&#125;</code>括起来，就是声明块。<br>声明作用到对应的<code>HTML</code>元素，就要加上选择器。</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><h4 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h4><ul>
+<li>标签选择器：<code>h1</code></li>
+<li>类选择器：<code>.checked</code></li>
+<li>ID 选择器：<code>#picker</code></li>
+<li>通配选择器：<code>*</code></li>
+</ul>
+<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><ul>
+<li>[attr]：指定属性的元素</li>
+<li>[attr=val]：属性等于指定值的元素</li>
+<li>[attr*=val]：属性包含指定值的元素</li>
+<li>[attr^=val]：属性以指定值开头的元素</li>
+<li>[attr$=val]：属性以指定值结尾的元素</li>
+<li>[attribute~=val]：属性包含指定值（完整单词）的元素（不推荐使用）</li>
+<li>[attr|val]：属性以指定（完整单词）开头的元素（不推荐使用）</li>
+</ul>
+<h4 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h4><ul>
+<li>相邻兄弟选择器：<code>A+B</code></li>
+<li>普通兄弟选择器：<code>A~B</code></li>
+<li>子选择器：<code>A&gt;B</code></li>
+<li>后代选择器：<code>AB</code></li>
+</ul>
+<h4 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h4><h5 id="条件伪类"><a href="#条件伪类" class="headerlink" title="条件伪类"></a>条件伪类</h5><ul>
+<li><code>:lang()</code>：基于元素语言来匹配页面元素</li>
+<li><code>:dir()</code>：匹配特定文字书写方向的元素</li>
+<li><code>:has()</code>：匹配包含指定元素的元素</li>
+<li><code>:is()</code>：匹配指定选择器列表里的元素</li>
+<li><code>:not()</code>：用来匹配不符合一组选择器的元素</li>
+</ul>
+<h5 id="行为伪类"><a href="#行为伪类" class="headerlink" title="行为伪类"></a>行为伪类</h5><p>-<code>:active</code>：鼠标激活的元素 -<code>:hover</code>：鼠标悬浮的元素 -<code>::selection</code>：鼠标选中的元素</p>
+<h5 id="状态伪类"><a href="#状态伪类" class="headerlink" title="状态伪类"></a>状态伪类</h5><ul>
+<li><code>:target</code>：当前锚点的元素</li>
+<li><code>:link</code>：未访问的链接元素</li>
+<li><code>:visited</code>：已访问的链接元素</li>
+<li><code>:focus</code>：输入聚焦的表单元素</li>
+<li><code>:required</code>：输入必填的表单元素</li>
+<li><code>:valid</code>：输入合法的表单元素</li>
+<li><code>：invalid</code>：输入非法的表单元素</li>
+<li><code>:in-range</code>：输入范围以内的表单元素</li>
+<li><code>out-of-range</code>：输入范围以外的表单元素</li>
+<li><code>checked</code>：选项选中的表单元素</li>
+<li><code>optional</code>：选项可选的表单元素</li>
+<li><code>enabled</code>：事件启用的表单元素</li>
+<li><code>disabled</code>：事件禁用的表单元素</li>
+<li><code>read-only</code>：只读的表单元素</li>
+<li><code>read-write</code>：可读可写的表单元素</li>
+<li><code>blank</code>：输入为空的表单元素</li>
+<li><code>current()</code>：浏览中的元素</li>
+<li><code>past()</code>：已浏览的元素</li>
+<li><code>future</code>：未浏览的元素</li>
+</ul>
+<h5 id="结构伪类"><a href="#结构伪类" class="headerlink" title="结构伪类"></a>结构伪类</h5><ul>
+<li><code>：root</code>：文档的根元素</li>
+<li><code>:empty</code>： 无子元素的元素</li>
+<li><code>:first-letter</code>：元素的首字母</li>
+<li><code>:first-line</code>：元素的首行</li>
+<li><code>:nth-child(n)</code>：元素中指定书序索引的元素</li>
+<li><code>:nth-last-child(n)</code>：元素中指定逆序索引的元素</li>
+<li><code>:first-child</code>：元素中为首的元素</li>
+<li><code>:last-child</code>：元素中为尾的元素</li>
+<li><code>:only-child</code>：父元素仅有该元素的元素</li>
+<li><code>:nth-of-type(n)</code>：标签中指定顺序索引的标签</li>
+<li><code>:nth-last-of-type(n)</code>：标签中指定逆序索引的标签</li>
+<li><code>:first-of-type</code>：标签中为首的标签</li>
+<li><code>:last-of-type</code>：标签中为尾标签</li>
+<li><code>:only-of-type</code>：父元素仅有该标签的标签</li>
+</ul>
+<h5 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h5><ul>
+<li><code>::before</code>：在元素前插入内容</li>
+<li><code>::after</code>：在元素后插入内容</li>
+</ul>
+<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><ul>
+<li>!important</li>
+<li>内联样式</li>
+<li>ID 选择器</li>
+<li>类选择、伪类选择器、属性选择器</li>
+<li>元素选择器、伪元素选择器</li>
+<li>通配选择器、后代选择器、兄弟选择器</li>
+</ul>
+<h3 id="CSS-Backgrounds"><a href="#CSS-Backgrounds" class="headerlink" title="CSS Backgrounds"></a>CSS Backgrounds</h3><ul>
+<li><p><code>background</code>：将背景属性设置在一个声明中</p>
+</li>
+<li><p><code>background-attachment</code>：背景图像是否固定或者随着页面的其余部分滚动</p>
+<ul>
+<li><code>scroll</code>：随着页面的滚动而滚动（默认值）</li>
+<li><code>fixed</code>：不会随着页面的滚动而滚动</li>
+<li><code>local</code>：随着元素的内容的滚动而滚动</li>
+<li><code>initial</code>：使用默认值</li>
+<li><code>inherit</code>：继承父元素的属性</li>
+</ul>
+</li>
+<li><p><code>background-color</code>：设置元素的背景颜色</p>
+<ul>
+<li><code>color</code>：背景颜色</li>
+<li><code>transparent</code>：背景颜色透明</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>background-image</code>：把图像设置为背景</p>
+<ul>
+<li><code>linear-gradient()</code>：创建一个线性渐变的”图像”（从上而下）</li>
+<li><code>radial-gradient()</code>：用径向渐变创建”图像”</li>
+<li><code>repeating-linear-gradient()</code>：创建重复的线性渐变”图像”</li>
+<li><code>repeating-radial-gradient()</code>：创建重复的径向渐变”图像”</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>background-position</code>：设置起始位置</p>
+<ul>
+<li><code>left/top/centet/bottom/right</code>：仅指定一个时，其他值会是center</li>
+<li><code>x% y%</code>：水平位置% 垂直位置%，左上角是0%0%，右下角是100%100%，仅指定一个值，其他将是50%</li>
+<li><code>xpos ypos</code>：水平位置 垂直位置，左上角是0，仅指定一个值，其他将是50%</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>background-repeat</code>：设置是否及如何重复</p>
+<ul>
+<li><code>repeat</code>：垂直和水平方向重复（默认值）</li>
+<li><code>repeat-x</code>：水平重复</li>
+<li><code>repeat-y</code>：垂直重复</li>
+<li><code>no-repeat</code>：不重复</li>
+<li><code>inherit</code>：继承父元素的属性</li>
+</ul>
+</li>
+</ul>
+<h2 id="喟然叹息😒😒"><a href="#喟然叹息😒😒" class="headerlink" title="喟然叹息😒😒"></a>喟然叹息😒😒</h2><p><strong><font size=4>凤栖梧</strong> </font><font size=2>柳永</font></p>
+<p><strong>伫倚危楼风细细，</strong></p>
+<p><em>望极春愁，</em></p>
+<p><strong>黯黯生天际。</strong></p>
+<p><em>草色烟光残照里，</em></p>
+<p><strong>无言谁会凭栏意。</strong></p>
+<p><em>拟把疏狂图一醉，</em></p>
+<p><strong>对酒当歌，</strong></p>
+<p><em>强乐还无味。</em></p>
+<p><strong>衣带渐宽终不悔，</strong></p>
+<p><em>为伊消得人憔悴。</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/03/css-xue-xi-yi/" data-id="clf98tg35002cd8ou0vqa3hwc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-async-await的理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/27/async-await-de-li-jie/" class="article-date">
+  <time datetime="2022-03-27T15:22:54.000Z" itemprop="datePublished">2022-03-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/27/async-await-de-li-jie/">async/await的理解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="async-await的理解"><a href="#async-await的理解" class="headerlink" title="async/await的理解"></a>async/await的理解</h2><p>遇到个五连回调的代码，真的是地狱级拷打，用<code>async await</code>进行了一波改写，顿时神清气爽，总结一下。<br>顾名思义，<code>async</code>是异步的简写，<code>await</code>是 <code>async await</code>的简写。所以async就是用于声明一个<code>function</code>是异步的，而<code>await</code>就是用来等待这个异步方法执行完成的。另外，规定<code>await</code>只能在<code>async</code>中使用。</p>
+<h3 id="async作用及工作原理"><a href="#async作用及工作原理" class="headerlink" title="async作用及工作原理"></a>async作用及工作原理</h3><p>先看下<code>async</code>是怎么处理返回值的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">testAsync</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = <span class="title function_">testAsync</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);<span class="comment">// Promise &#123;&#x27;hello world&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>可见，<code>async</code>返回一个<code>Promise</code>对象。如果在<code>async</code>函数中直接<code>return</code>一个值，那么<code>async</code>会把这个值通过<code>Promise.resolve()</code>封装成<code>Promise</code>对象。<code>Promise</code>的特点——无等待，所以在没有使用<code>await</code>的情况下，<code>async</code>会立即执行，不会阻塞后面的代码。</p>
+<h3 id="await在等谁呢？"><a href="#await在等谁呢？" class="headerlink" title="await在等谁呢？"></a>await在等谁呢？</h3><p>原以为，<code>await</code>在等待<code>async</code>的函数完成，等<code>async</code>的讯息。看了文档后，<code>await</code>等待的其实是一个表达式，这个表达式的计算结果是<code>Promise</code>对象或者其它值。<br><code>await</code>不仅仅用于等<code>Promise</code>对象，它可以等任意表达式的结果，所以<code>await</code>是可以接普通函数的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getValue</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">123</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">testAsync</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> v1 = <span class="keyword">await</span> <span class="title function_">getValue</span>();</span><br><span class="line">    <span class="keyword">const</span> v2 = <span class="keyword">await</span> <span class="title function_">testAsync</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(v1, v2);<span class="comment">// 123 hello world</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="await等到结果之后"><a href="#await等到结果之后" class="headerlink" title="await等到结果之后"></a>await等到结果之后</h3><p>返回<code>Promise</code>对象的处理结果，如果等待的不是<code>Promise</code>对象，则返回值本身。<br><code>await</code>会在暂停<code>async</code>函数，等待<code>Promise</code>处理完成。<br>如果<code>Promise</code>正常处理，则回调的<code>resolve</code>函数参数作为<code>await</code>的值，继续执行<code>async</code>函数。<br>如果<code>Promise</code>处理异常，<code>await</code>会把Promise的异常原因抛出。</p>
+<h3 id="为啥要使用async-await"><a href="#为啥要使用async-await" class="headerlink" title="为啥要使用async/await"></a>为啥要使用async/await</h3><p>反正都是处理Promise对象，为啥不直接用.then()呢？用setTimeout模拟耗时的异步操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">function</span> <span class="title function_">mockApi</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(<span class="string">&quot;hello world&quot;</span>), <span class="number">1000</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// then写法</span></span><br><span class="line">    <span class="title function_">mockApi</span>().<span class="title function_">then</span>(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;then&quot;</span>, v);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// async/await写法</span></span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> v = <span class="keyword">await</span> <span class="title function_">mockApi</span>();</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(v);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>();</span><br></pre></td></tr></table></figure>
+
+<p><code>async/await</code>反而要多写一点代码，繁重的工作雪上加霜了。😂😂😂😂😂<br>不要着急，脱裤子肯定不是为了…<br>单一的<code>Promise</code>链并不能发现<code>async/await</code>的妙用😏，当遇到多个<code>Promise</code>组成的<code>then</code>链时，你会发现<code>async/await</code>就是救世主。<br>试试看，一个业务处理分成多个步骤，每一步都是异步 的，而且每一步都依赖前一步的结果。<br><code>setTimeout</code>受累一下😙😙😙</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 传入参数value，表示这个函数执行的时间</span></span><br><span class="line"><span class="comment"> * 执行结果增加1000，用于下一步</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">*</span>&#125; value 时间</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span> 时间+1000ms</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">mockApi</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(value + <span class="number">1000</span>), value);</span><br><span class="line">    &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">step1</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`step1 with <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">mockApi</span>(value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">step2</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`step2 with <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">mockApi</span>(value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">step3</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`step3 with <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">mockApi</span>(value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// then写法</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">testThen</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&quot;testThen&quot;</span>);</span><br><span class="line">    <span class="keyword">const</span> time1 = <span class="number">300</span>;</span><br><span class="line">    <span class="title function_">step1</span>(time1).<span class="title function_">then</span>(<span class="function">(<span class="params">time2</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">step2</span>(time2).<span class="title function_">then</span>(<span class="function">(<span class="params">time3</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">step3</span>(time3).<span class="title function_">then</span>(<span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`result is <span class="subst">$&#123;result&#125;</span>`</span>); <span class="comment">// 我已经晕了😵😵😵😵</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&quot;testThen&quot;</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">testThen</span>();</span><br><span class="line">    <span class="comment">// step1 with 300</span></span><br><span class="line">    <span class="comment">// step2 with 1300</span></span><br><span class="line">    <span class="comment">// step3 with 2300</span></span><br><span class="line">    <span class="comment">// result is 3300</span></span><br><span class="line">    <span class="comment">// testThen: 3921.948ms</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// async/await写法</span></span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">testAsync</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&quot;testAsync&quot;</span>);</span><br><span class="line">        <span class="keyword">const</span> time1 = <span class="number">300</span>;</span><br><span class="line">        <span class="keyword">const</span> time2 = <span class="keyword">await</span> <span class="title function_">step1</span>(time1);</span><br><span class="line">        <span class="keyword">const</span> time2 = <span class="keyword">await</span> <span class="title function_">step3</span>(time1);</span><br><span class="line">        <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="title function_">step3</span>(time1);</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`result is <span class="subst">$&#123;result&#125;</span>`</span>); <span class="comment">// YYDS</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&quot;testAsync&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">testAsync</span>();</span><br></pre></td></tr></table></figure>
+
+<p><code>async/await</code>有多清晰，不用多说了吧。</p>
+<h2 id="附庸风雅😳😳😳"><a href="#附庸风雅😳😳😳" class="headerlink" title="附庸风雅😳😳😳"></a>附庸风雅😳😳😳</h2><p><strong><font size=4>梅花引</font></strong> <font size=1>荆溪阻雪</font> <font size=2>蒋捷</font></p>
+<p><strong>白鸥问我泊孤舟</strong></p>
+<p><em>是身留？是心留？</em></p>
+<p><strong>心若留时，何事锁眉头？</strong></p>
+<p><em>风拍小帘灯晕舞</em></p>
+<p><strong>对闲影，冷清清，忆旧游。</strong></p>
+<p><em>旧游旧游今在不？</em></p>
+<p><strong>花外楼，柳下舟。</strong></p>
+<p><em>梦也梦也，梦不到，寒水空流。</em></p>
+<p><strong>漠漠黄云，湿透木棉裘。</strong></p>
+<p><em>都道无人愁似我</em></p>
+<p><strong>今夜雪，有梅花，似我愁。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/27/async-await-de-li-jie/" data-id="clf98tg340029d8ougo944d70" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/async-await/" rel="tag">async/await</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5/" rel="tag">异步</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JS循环总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/26/js-xun-huan-zong-jie/" class="article-date">
+  <time datetime="2022-03-26T11:07:01.000Z" itemprop="datePublished">2022-03-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/26/js-xun-huan-zong-jie/">JS循环总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS循环总结"><a href="#JS循环总结" class="headerlink" title="JS循环总结"></a>JS循环总结</h2><p>工作发现，项目中的对于对象、数组的循环，使用的方法各不相同，有<code>forEach</code>、<code>for in</code>、<code>for of</code>、<code>map</code>以及<code>for</code>，故对这些循环做些总结。</p>
+<h3 id="forEach（数组方法）"><a href="#forEach（数组方法）" class="headerlink" title="forEach（数组方法）"></a>forEach（数组方法）</h3><h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ul>
+<li>遍历的时候更加简洁，效率和for循环相同，不用关系集合下标的问题，减少了出错的概率。</li>
+<li>没有返回值。</li>
+<li>不能使用break中断循环，不能使用return返回到外层函数。</li>
+</ul>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> newArray = array.<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    item+=<span class="number">1</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(item);<span class="comment">// 2 3 4</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array); <span class="comment">// [1, 2, 3]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newArray) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h3><h4 id="特性-1"><a href="#特性-1" class="headerlink" title="特性"></a>特性</h4><p>更适合遍历对象，可以遍历数组，但是会有一些局限性。</p>
+<h4 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h4><p><code>for in</code>的索引为字符串型数字，不能直接进行几何运算</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> i <span class="keyword">in</span> array) &#123;</span><br><span class="line">    <span class="keyword">const</span> res = i + <span class="number">1</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 01 11 21</span></span><br></pre></td></tr></table></figure>
+
+<p>遍历顺序有可能不是按照实际数组的内部顺序，使用<code>for in</code>会遍历数组所有的可枚举属性，包括原型，如果不想遍历原型方法和属性的话，可以在循环内部判断一下，使用<code>hasOwnProperty()</code>方法可以判断某属性是不是该对象的实例属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">a</span> = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> index <span class="keyword">in</span> array) &#123;</span><br><span class="line">    <span class="keyword">const</span> res = array[index];</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1 2 3 123</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> index <span class="keyword">in</span> array) &#123;</span><br><span class="line">    <span class="keyword">if</span> (array.<span class="title function_">hasOwnProperty</span>(index)) &#123;</span><br><span class="line">        <span class="keyword">const</span> res = array[index];</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h3><h4 id="特性-2"><a href="#特性-2" class="headerlink" title="特性"></a>特性</h4><ul>
+<li>可遍历map/objet/array/set/string等</li>
+<li>避免了<code>for in</code>的所有缺点，可以使用break、continue和return，不支持数组的遍历，还可以遍历类似数组的对象。</li>
+</ul>
+<h4 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h4><p><code>for of</code>是ES6的新语法，为了弥补<code>for in</code>的局限性。<br><code>for of</code>遍历的数组元素值，而且<code>for of</code>遍历的只是数组内的元素，不包括原型属性和索引</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">array.<span class="property">a</span> = <span class="number">123</span>;</span><br><span class="line"><span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">a</span> = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> value <span class="keyword">of</span> array) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+
+<p><code>for of</code>适用遍历拥有迭代器对象的集合，但是不能遍历对象，因为没有迭代器对象，但如果想遍历对象，可以用内建的<code>Object.keys()</code>方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myObject = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">b</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">c</span>: <span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">of</span> <span class="title class_">Object</span>.<span class="title function_">keys</span>(myObject)) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(key + <span class="string">&quot;：&quot;</span> + myObject[key]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//&gt; &quot;a：1&quot; &quot;b：2&quot; &quot;c：3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="map-（数组方法）"><a href="#map-（数组方法）" class="headerlink" title="map （数组方法）"></a>map （数组方法）</h3><h4 id="特性-3"><a href="#特性-3" class="headerlink" title="特性"></a>特性</h4><ul>
+<li>map不改变原数组但是会返回新数组</li>
+<li>可以使用break中断循环，可以使用return返回到外层函数</li>
+</ul>
+<h4 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> newArray = array.<span class="title function_">map</span>(<span class="function"><span class="params">index</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> index+= <span class="number">1</span>;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(array);<span class="comment">// [1, 2 , 3]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newArray);<span class="comment">//  [2, 3 , 4]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在大地上我们只过一生。 —-叶赛宁</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/26/js-xun-huan-zong-jie/" data-id="clf98tg24000dd8ou5uceadfp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AA%E7%8E%AF/" rel="tag">循环</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页 &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">.Net</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Net/Winform/">Winform</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DB/">DB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/DB/Elasticsearch/">Elasticsearch</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vscode/">Vscode</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vscode/%E6%8F%92%E4%BB%B6/">插件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA/">个人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/">Windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%93%BE%E6%8E%A5/">链接</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoUpdater/" rel="tag">AutoUpdater</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CefSharp/" rel="tag">CefSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hive/" rel="tag">Hive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%A8%A1%E5%9E%8B/" rel="tag">IO模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM%E6%A8%A1%E5%9E%8B/" rel="tag">MVVM模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Batch/" rel="tag">Spring Batch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/" rel="tag">URL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Utils/" rel="tag">Utils</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vscode/" rel="tag">Vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/async-await/" rel="tag">async/await</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/el%E4%B8%8Edata/" rel="tag">el与data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/equals/" rel="tag">equals</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar%E5%8C%85/" rel="tag">jar包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">单向绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">双向绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/" rel="tag">客户端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B1%85%E4%B8%AD/" rel="tag">居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5/" rel="tag">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%95%E5%85%A5JS/" rel="tag">引入JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AA%E7%8E%AF/" rel="tag">循环</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" rel="tag">批处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A7%E4%BB%B6/" rel="tag">控件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" rel="tag">文件处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90/" rel="tag">日期解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" rel="tag">模板语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/" rel="tag">端口占用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%80%E5%8E%86/" rel="tag">简历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" rel="tag">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8A%82%E6%B5%81/" rel="tag">节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%B2%E6%8A%96/" rel="tag">防抖</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AutoUpdater/" style="font-size: 10px;">AutoUpdater</a> <a href="/tags/CefSharp/" style="font-size: 10px;">CefSharp</a> <a href="/tags/Elasticsearch/" style="font-size: 10px;">Elasticsearch</a> <a href="/tags/Hive/" style="font-size: 10px;">Hive</a> <a href="/tags/IO%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">IO模型</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/LeetCode/" style="font-size: 17.5px;">LeetCode</a> <a href="/tags/MVVM%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">MVVM模型</a> <a href="/tags/Spring-Batch/" style="font-size: 10px;">Spring Batch</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/Utils/" style="font-size: 12.5px;">Utils</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/async-await/" style="font-size: 10px;">async/await</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/el%E4%B8%8Edata/" style="font-size: 10px;">el与data</a> <a href="/tags/equals/" style="font-size: 10px;">equals</a> <a href="/tags/jar%E5%8C%85/" style="font-size: 10px;">jar包</a> <a href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" style="font-size: 10px;">单向绑定</a> <a href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" style="font-size: 10px;">双向绑定</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/" style="font-size: 12.5px;">客户端</a> <a href="/tags/%E5%B1%85%E4%B8%AD/" style="font-size: 10px;">居中</a> <a href="/tags/%E5%BC%82%E6%AD%A5/" style="font-size: 10px;">异步</a> <a href="/tags/%E5%BC%95%E5%85%A5JS/" style="font-size: 10px;">引入JS</a> <a href="/tags/%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">循环</a> <a href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" style="font-size: 10px;">批处理</a> <a href="/tags/%E6%8E%A7%E4%BB%B6/" style="font-size: 10px;">控件</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 20px;">数组</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" style="font-size: 10px;">文件处理</a> <a href="/tags/%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">日期解析</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" style="font-size: 10px;">模板语法</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/" style="font-size: 10px;">端口占用</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 10px;">简历</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">类型转换</a> <a href="/tags/%E8%8A%82%E6%B5%81/" style="font-size: 10px;">节流</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a> <a href="/tags/%E9%98%B2%E6%8A%96/" style="font-size: 10px;">防抖</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/">Java文件处理常用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/chang-yong-cha-jian-bei-fen/">常用插件备份</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/chang-yong-lian-jie-bei-wang/">常用链接备忘</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/windows-xi-tong-xiu-gai-jar-nei-rong/">Windows系统修改jar包中的文件或者依赖</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/09/css-xue-xi-si/">css学习四</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 于北往南<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

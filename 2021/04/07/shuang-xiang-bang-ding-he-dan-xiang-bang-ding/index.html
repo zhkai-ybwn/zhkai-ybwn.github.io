@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>双向绑定和单向绑定 | 于北往南的小屋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数据绑定所谓数据绑定，就是指View层和Model层之间的映射关系 单向绑定Model的更新会触发 View 的更新，而 View 的更新不会触发Model的更新，它们的作用是单向的。 双向绑定Model的更新会触发View的更新，View的更新也会触发Model的更新，它们的作用是相互的。  React 采用单向数据绑定当用户访问View时，通过触发Events进行交互，而在相应Events H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="双向绑定和单向绑定">
+<meta property="og:url" content="http://example.com/2021/04/07/shuang-xiang-bang-ding-he-dan-xiang-bang-ding/index.html">
+<meta property="og:site_name" content="于北往南的小屋">
+<meta property="og:description" content="数据绑定所谓数据绑定，就是指View层和Model层之间的映射关系 单向绑定Model的更新会触发 View 的更新，而 View 的更新不会触发Model的更新，它们的作用是单向的。 双向绑定Model的更新会触发View的更新，View的更新也会触发Model的更新，它们的作用是相互的。  React 采用单向数据绑定当用户访问View时，通过触发Events进行交互，而在相应Events H">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.imgdb.cn/item/606d43ca8322e6675caf6c70.jpg">
+<meta property="og:image" content="https://img.imgdb.cn/item/606d441d8322e6675caffcc3.jpg">
+<meta property="article:published_time" content="2021-04-07T13:15:40.000Z">
+<meta property="article:modified_time" content="2023-03-15T05:29:34.487Z">
+<meta property="article:author" content="于北往南">
+<meta property="article:tag" content="双向绑定">
+<meta property="article:tag" content="单向绑定">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.imgdb.cn/item/606d43ca8322e6675caf6c70.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="于北往南的小屋" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">于北往南的小屋</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-双向绑定和单向绑定" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/04/07/shuang-xiang-bang-ding-he-dan-xiang-bang-ding/" class="article-date">
+  <time datetime="2021-04-07T13:15:40.000Z" itemprop="datePublished">2021-04-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>►<a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      双向绑定和单向绑定
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>所谓数据绑定，就是指<code>View</code>层和<code>Model</code>层之间的映射关系</p>
+<h3 id="单向绑定"><a href="#单向绑定" class="headerlink" title="单向绑定"></a>单向绑定</h3><p><code>Model</code>的更新会触发 View 的更新，而 View 的更新不会触发<code>Model</code>的更新，它们的作用是单向的。</p>
+<h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3><p><code>Model</code>的更新会触发<code>View</code>的更新，<code>View</code>的更新也会触发<code>Model</code>的更新，它们的作用是相互的。</p>
+<p><img src="https://img.imgdb.cn/item/606d43ca8322e6675caf6c70.jpg" alt="avatar"></p>
+<h3 id="React-采用单向数据绑定"><a href="#React-采用单向数据绑定" class="headerlink" title="React 采用单向数据绑定"></a>React 采用单向数据绑定</h3><p><img src="https://img.imgdb.cn/item/606d441d8322e6675caffcc3.jpg" alt="avatar"><br>当用户访问<code>View</code>时，通过触发<code>Events</code>进行交互，而在相应<code>Events Handlers</code>中，会触发相应的<code>Actions</code>，而<code>Actions</code>通过调用<code>setState</code>方法对<code>View</code>的<code>State</code>进行更新，<code>State</code>更新后会触发<code>View</code>的重新渲染。</p>
+<p>单向数据绑定的优缺点：<br>优点：所有状态都可以被记录、跟踪，状态变化通过手动调用触发，源头易追溯。<br>缺点：会有很多类似的样板代码，代码量会相应的上升。</p>
+<h3 id="Vue-支持单向数据绑定和双向数据绑定"><a href="#Vue-支持单向数据绑定和双向数据绑定" class="headerlink" title="Vue 支持单向数据绑定和双向数据绑定"></a>Vue 支持单向数据绑定和双向数据绑定</h3><ul>
+<li>单项数据绑定：使用<code>v-bind</code>属性绑定、<code>v-on</code>事件绑定或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
+<li>双向数据绑定：使用<code>v-model</code>指令，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
+</ul>
+<p>Vue 的双向数据绑定就是指使用<code>v-model</code>指令进行数据绑定，而<code>v-model</code>本质上是<code>v-bind</code>和<code>v-on</code>相结合的语法糖，是框架自动帮我们实现了更新事件。换句话说，我们完全可以采用单向绑定，自己实现类似的双向数据绑定。</p>
+<p>双向数据绑定的优缺点：</p>
+<p>优点：在操作表单时使用<code>v-model</code>方便简单，可以省略繁琐或重复的<code>onChange</code>事件去处理每个表单数据的变化（减少代码量）。<br>缺点：属于暗箱操作，无法很好的追踪双向绑定的数据变化。</p>
+<h3 id="Angular-支持单向数据绑定和双向数据绑定"><a href="#Angular-支持单向数据绑定和双向数据绑定" class="headerlink" title="Angular 支持单向数据绑定和双向数据绑定"></a>Angular 支持单向数据绑定和双向数据绑定</h3><ul>
+<li>单向数据绑定：使用<code>[x]</code>属性绑定，<code>(x)</code>事件绑定或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
+<li>双向数据绑定：使用<code>[(x)]</code>语法，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
+</ul>
+<h3 id="AngularJS-支持单向数据绑定和双向数据绑定"><a href="#AngularJS-支持单向数据绑定和双向数据绑定" class="headerlink" title="AngularJS 支持单向数据绑定和双向数据绑定"></a>AngularJS 支持单向数据绑定和双向数据绑定</h3><ul>
+<li>单向数据绑定：使用<code>ng-bind</code>指令或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
+<li>双向数据绑定：使用<code>ng-model</code>指令，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
+</ul>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6854573208646090765">https://juejin.cn/post/6854573208646090765</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/07/shuang-xiang-bang-ding-he-dan-xiang-bang-ding/" data-id="clf98tg3b002td8ou2u7nh1ib" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">单向绑定</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">双向绑定</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/08/leetcode-shu-zu-zhong-chong-fu-de-shu-zi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          LeetCode数组中重复的数字
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/07/leetcode-zi-ju-xing-cha-xun/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">LeetCode子矩形查询</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">.Net</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Net/Winform/">Winform</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DB/">DB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/DB/Elasticsearch/">Elasticsearch</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vscode/">Vscode</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vscode/%E6%8F%92%E4%BB%B6/">插件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA/">个人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/">Windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%93%BE%E6%8E%A5/">链接</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoUpdater/" rel="tag">AutoUpdater</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CefSharp/" rel="tag">CefSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hive/" rel="tag">Hive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%A8%A1%E5%9E%8B/" rel="tag">IO模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM%E6%A8%A1%E5%9E%8B/" rel="tag">MVVM模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Batch/" rel="tag">Spring Batch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/" rel="tag">URL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Utils/" rel="tag">Utils</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vscode/" rel="tag">Vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/async-await/" rel="tag">async/await</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/el%E4%B8%8Edata/" rel="tag">el与data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/equals/" rel="tag">equals</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar%E5%8C%85/" rel="tag">jar包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">单向绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">双向绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/" rel="tag">客户端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B1%85%E4%B8%AD/" rel="tag">居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5/" rel="tag">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%95%E5%85%A5JS/" rel="tag">引入JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AA%E7%8E%AF/" rel="tag">循环</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" rel="tag">批处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A7%E4%BB%B6/" rel="tag">控件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" rel="tag">文件处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90/" rel="tag">日期解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" rel="tag">模板语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/" rel="tag">端口占用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%80%E5%8E%86/" rel="tag">简历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" rel="tag">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8A%82%E6%B5%81/" rel="tag">节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%B2%E6%8A%96/" rel="tag">防抖</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AutoUpdater/" style="font-size: 10px;">AutoUpdater</a> <a href="/tags/CefSharp/" style="font-size: 10px;">CefSharp</a> <a href="/tags/Elasticsearch/" style="font-size: 10px;">Elasticsearch</a> <a href="/tags/Hive/" style="font-size: 10px;">Hive</a> <a href="/tags/IO%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">IO模型</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/LeetCode/" style="font-size: 17.5px;">LeetCode</a> <a href="/tags/MVVM%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">MVVM模型</a> <a href="/tags/Spring-Batch/" style="font-size: 10px;">Spring Batch</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/Utils/" style="font-size: 12.5px;">Utils</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/async-await/" style="font-size: 10px;">async/await</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/el%E4%B8%8Edata/" style="font-size: 10px;">el与data</a> <a href="/tags/equals/" style="font-size: 10px;">equals</a> <a href="/tags/jar%E5%8C%85/" style="font-size: 10px;">jar包</a> <a href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" style="font-size: 10px;">单向绑定</a> <a href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" style="font-size: 10px;">双向绑定</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/" style="font-size: 12.5px;">客户端</a> <a href="/tags/%E5%B1%85%E4%B8%AD/" style="font-size: 10px;">居中</a> <a href="/tags/%E5%BC%82%E6%AD%A5/" style="font-size: 10px;">异步</a> <a href="/tags/%E5%BC%95%E5%85%A5JS/" style="font-size: 10px;">引入JS</a> <a href="/tags/%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">循环</a> <a href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" style="font-size: 10px;">批处理</a> <a href="/tags/%E6%8E%A7%E4%BB%B6/" style="font-size: 10px;">控件</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 20px;">数组</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" style="font-size: 10px;">文件处理</a> <a href="/tags/%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">日期解析</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" style="font-size: 10px;">模板语法</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/" style="font-size: 10px;">端口占用</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 10px;">简历</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">类型转换</a> <a href="/tags/%E8%8A%82%E6%B5%81/" style="font-size: 10px;">节流</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a> <a href="/tags/%E9%98%B2%E6%8A%96/" style="font-size: 10px;">防抖</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/">Java文件处理常用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/chang-yong-cha-jian-bei-fen/">常用插件备份</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/chang-yong-lian-jie-bei-wang/">常用链接备忘</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/windows-xi-tong-xiu-gai-jar-nei-rong/">Windows系统修改jar包中的文件或者依赖</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/09/css-xue-xi-si/">css学习四</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 于北往南<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

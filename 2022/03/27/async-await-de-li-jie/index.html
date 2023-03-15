@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>async/await的理解 | 于北往南的小屋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="async&#x2F;await的理解遇到个五连回调的代码，真的是地狱级拷打，用async await进行了一波改写，顿时神清气爽，总结一下。顾名思义，async是异步的简写，await是 async await的简写。所以async就是用于声明一个function是异步的，而await就是用来等待这个异步方法执行完成的。另外，规定await只能在async中使用。 async作用及工作原理先看下async">
+<meta property="og:type" content="article">
+<meta property="og:title" content="async&#x2F;await的理解">
+<meta property="og:url" content="http://example.com/2022/03/27/async-await-de-li-jie/index.html">
+<meta property="og:site_name" content="于北往南的小屋">
+<meta property="og:description" content="async&#x2F;await的理解遇到个五连回调的代码，真的是地狱级拷打，用async await进行了一波改写，顿时神清气爽，总结一下。顾名思义，async是异步的简写，await是 async await的简写。所以async就是用于声明一个function是异步的，而await就是用来等待这个异步方法执行完成的。另外，规定await只能在async中使用。 async作用及工作原理先看下async">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-27T15:22:54.000Z">
+<meta property="article:modified_time" content="2023-03-15T05:29:34.487Z">
+<meta property="article:author" content="于北往南">
+<meta property="article:tag" content="异步">
+<meta property="article:tag" content="async&#x2F;await">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="于北往南的小屋" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">于北往南的小屋</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-async-await的理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/27/async-await-de-li-jie/" class="article-date">
+  <time datetime="2022-03-27T15:22:54.000Z" itemprop="datePublished">2022-03-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      async/await的理解
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="async-await的理解"><a href="#async-await的理解" class="headerlink" title="async/await的理解"></a>async/await的理解</h2><p>遇到个五连回调的代码，真的是地狱级拷打，用<code>async await</code>进行了一波改写，顿时神清气爽，总结一下。<br>顾名思义，<code>async</code>是异步的简写，<code>await</code>是 <code>async await</code>的简写。所以async就是用于声明一个<code>function</code>是异步的，而<code>await</code>就是用来等待这个异步方法执行完成的。另外，规定<code>await</code>只能在<code>async</code>中使用。</p>
+<h3 id="async作用及工作原理"><a href="#async作用及工作原理" class="headerlink" title="async作用及工作原理"></a>async作用及工作原理</h3><p>先看下<code>async</code>是怎么处理返回值的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">testAsync</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = <span class="title function_">testAsync</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);<span class="comment">// Promise &#123;&#x27;hello world&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>可见，<code>async</code>返回一个<code>Promise</code>对象。如果在<code>async</code>函数中直接<code>return</code>一个值，那么<code>async</code>会把这个值通过<code>Promise.resolve()</code>封装成<code>Promise</code>对象。<code>Promise</code>的特点——无等待，所以在没有使用<code>await</code>的情况下，<code>async</code>会立即执行，不会阻塞后面的代码。</p>
+<h3 id="await在等谁呢？"><a href="#await在等谁呢？" class="headerlink" title="await在等谁呢？"></a>await在等谁呢？</h3><p>原以为，<code>await</code>在等待<code>async</code>的函数完成，等<code>async</code>的讯息。看了文档后，<code>await</code>等待的其实是一个表达式，这个表达式的计算结果是<code>Promise</code>对象或者其它值。<br><code>await</code>不仅仅用于等<code>Promise</code>对象，它可以等任意表达式的结果，所以<code>await</code>是可以接普通函数的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getValue</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">123</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">testAsync</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> v1 = <span class="keyword">await</span> <span class="title function_">getValue</span>();</span><br><span class="line">    <span class="keyword">const</span> v2 = <span class="keyword">await</span> <span class="title function_">testAsync</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(v1, v2);<span class="comment">// 123 hello world</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="await等到结果之后"><a href="#await等到结果之后" class="headerlink" title="await等到结果之后"></a>await等到结果之后</h3><p>返回<code>Promise</code>对象的处理结果，如果等待的不是<code>Promise</code>对象，则返回值本身。<br><code>await</code>会在暂停<code>async</code>函数，等待<code>Promise</code>处理完成。<br>如果<code>Promise</code>正常处理，则回调的<code>resolve</code>函数参数作为<code>await</code>的值，继续执行<code>async</code>函数。<br>如果<code>Promise</code>处理异常，<code>await</code>会把Promise的异常原因抛出。</p>
+<h3 id="为啥要使用async-await"><a href="#为啥要使用async-await" class="headerlink" title="为啥要使用async/await"></a>为啥要使用async/await</h3><p>反正都是处理Promise对象，为啥不直接用.then()呢？用setTimeout模拟耗时的异步操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">function</span> <span class="title function_">mockApi</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(<span class="string">&quot;hello world&quot;</span>), <span class="number">1000</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// then写法</span></span><br><span class="line">    <span class="title function_">mockApi</span>().<span class="title function_">then</span>(<span class="function"><span class="params">v</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;then&quot;</span>, v);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// async/await写法</span></span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> v = <span class="keyword">await</span> <span class="title function_">mockApi</span>();</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(v);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>();</span><br></pre></td></tr></table></figure>
+
+<p><code>async/await</code>反而要多写一点代码，繁重的工作雪上加霜了。😂😂😂😂😂<br>不要着急，脱裤子肯定不是为了…<br>单一的<code>Promise</code>链并不能发现<code>async/await</code>的妙用😏，当遇到多个<code>Promise</code>组成的<code>then</code>链时，你会发现<code>async/await</code>就是救世主。<br>试试看，一个业务处理分成多个步骤，每一步都是异步 的，而且每一步都依赖前一步的结果。<br><code>setTimeout</code>受累一下😙😙😙</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 传入参数value，表示这个函数执行的时间</span></span><br><span class="line"><span class="comment"> * 执行结果增加1000，用于下一步</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">*</span>&#125; value 时间</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span> 时间+1000ms</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">mockApi</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(value + <span class="number">1000</span>), value);</span><br><span class="line">    &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">step1</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`step1 with <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">mockApi</span>(value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">step2</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`step2 with <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">mockApi</span>(value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">step3</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`step3 with <span class="subst">$&#123;value&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">mockApi</span>(value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// then写法</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">testThen</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&quot;testThen&quot;</span>);</span><br><span class="line">    <span class="keyword">const</span> time1 = <span class="number">300</span>;</span><br><span class="line">    <span class="title function_">step1</span>(time1).<span class="title function_">then</span>(<span class="function">(<span class="params">time2</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">step2</span>(time2).<span class="title function_">then</span>(<span class="function">(<span class="params">time3</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">step3</span>(time3).<span class="title function_">then</span>(<span class="function">(<span class="params">result</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`result is <span class="subst">$&#123;result&#125;</span>`</span>); <span class="comment">// 我已经晕了😵😵😵😵</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&quot;testThen&quot;</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">testThen</span>();</span><br><span class="line">    <span class="comment">// step1 with 300</span></span><br><span class="line">    <span class="comment">// step2 with 1300</span></span><br><span class="line">    <span class="comment">// step3 with 2300</span></span><br><span class="line">    <span class="comment">// result is 3300</span></span><br><span class="line">    <span class="comment">// testThen: 3921.948ms</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// async/await写法</span></span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">testAsync</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&quot;testAsync&quot;</span>);</span><br><span class="line">        <span class="keyword">const</span> time1 = <span class="number">300</span>;</span><br><span class="line">        <span class="keyword">const</span> time2 = <span class="keyword">await</span> <span class="title function_">step1</span>(time1);</span><br><span class="line">        <span class="keyword">const</span> time2 = <span class="keyword">await</span> <span class="title function_">step3</span>(time1);</span><br><span class="line">        <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="title function_">step3</span>(time1);</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`result is <span class="subst">$&#123;result&#125;</span>`</span>); <span class="comment">// YYDS</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&quot;testAsync&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">testAsync</span>();</span><br></pre></td></tr></table></figure>
+
+<p><code>async/await</code>有多清晰，不用多说了吧。</p>
+<h2 id="附庸风雅😳😳😳"><a href="#附庸风雅😳😳😳" class="headerlink" title="附庸风雅😳😳😳"></a>附庸风雅😳😳😳</h2><p><strong><font size=4>梅花引</font></strong> <font size=1>荆溪阻雪</font> <font size=2>蒋捷</font></p>
+<p><strong>白鸥问我泊孤舟</strong></p>
+<p><em>是身留？是心留？</em></p>
+<p><strong>心若留时，何事锁眉头？</strong></p>
+<p><em>风拍小帘灯晕舞</em></p>
+<p><strong>对闲影，冷清清，忆旧游。</strong></p>
+<p><em>旧游旧游今在不？</em></p>
+<p><strong>花外楼，柳下舟。</strong></p>
+<p><em>梦也梦也，梦不到，寒水空流。</em></p>
+<p><strong>漠漠黄云，湿透木棉裘。</strong></p>
+<p><em>都道无人愁似我</em></p>
+<p><strong>今夜雪，有梅花，似我愁。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/27/async-await-de-li-jie/" data-id="clf98tg340029d8ougo944d70" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/async-await/" rel="tag">async/await</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5/" rel="tag">异步</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/03/css-xue-xi-yi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          css学习一
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/26/js-xun-huan-zong-jie/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS循环总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">.Net</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Net/Winform/">Winform</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DB/">DB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/DB/Elasticsearch/">Elasticsearch</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vscode/">Vscode</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vscode/%E6%8F%92%E4%BB%B6/">插件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA/">个人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/">Windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%93%BE%E6%8E%A5/">链接</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoUpdater/" rel="tag">AutoUpdater</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CefSharp/" rel="tag">CefSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hive/" rel="tag">Hive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%A8%A1%E5%9E%8B/" rel="tag">IO模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM%E6%A8%A1%E5%9E%8B/" rel="tag">MVVM模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Batch/" rel="tag">Spring Batch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/" rel="tag">URL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Utils/" rel="tag">Utils</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vscode/" rel="tag">Vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/async-await/" rel="tag">async/await</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/el%E4%B8%8Edata/" rel="tag">el与data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/equals/" rel="tag">equals</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar%E5%8C%85/" rel="tag">jar包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">单向绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">双向绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/" rel="tag">客户端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B1%85%E4%B8%AD/" rel="tag">居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5/" rel="tag">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%95%E5%85%A5JS/" rel="tag">引入JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AA%E7%8E%AF/" rel="tag">循环</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" rel="tag">批处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A7%E4%BB%B6/" rel="tag">控件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" rel="tag">文件处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90/" rel="tag">日期解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" rel="tag">模板语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/" rel="tag">端口占用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%80%E5%8E%86/" rel="tag">简历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" rel="tag">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8A%82%E6%B5%81/" rel="tag">节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%B2%E6%8A%96/" rel="tag">防抖</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AutoUpdater/" style="font-size: 10px;">AutoUpdater</a> <a href="/tags/CefSharp/" style="font-size: 10px;">CefSharp</a> <a href="/tags/Elasticsearch/" style="font-size: 10px;">Elasticsearch</a> <a href="/tags/Hive/" style="font-size: 10px;">Hive</a> <a href="/tags/IO%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">IO模型</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/LeetCode/" style="font-size: 17.5px;">LeetCode</a> <a href="/tags/MVVM%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">MVVM模型</a> <a href="/tags/Spring-Batch/" style="font-size: 10px;">Spring Batch</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/Utils/" style="font-size: 12.5px;">Utils</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/async-await/" style="font-size: 10px;">async/await</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/el%E4%B8%8Edata/" style="font-size: 10px;">el与data</a> <a href="/tags/equals/" style="font-size: 10px;">equals</a> <a href="/tags/jar%E5%8C%85/" style="font-size: 10px;">jar包</a> <a href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" style="font-size: 10px;">单向绑定</a> <a href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" style="font-size: 10px;">双向绑定</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/" style="font-size: 12.5px;">客户端</a> <a href="/tags/%E5%B1%85%E4%B8%AD/" style="font-size: 10px;">居中</a> <a href="/tags/%E5%BC%82%E6%AD%A5/" style="font-size: 10px;">异步</a> <a href="/tags/%E5%BC%95%E5%85%A5JS/" style="font-size: 10px;">引入JS</a> <a href="/tags/%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">循环</a> <a href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" style="font-size: 10px;">批处理</a> <a href="/tags/%E6%8E%A7%E4%BB%B6/" style="font-size: 10px;">控件</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 20px;">数组</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" style="font-size: 10px;">文件处理</a> <a href="/tags/%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">日期解析</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" style="font-size: 10px;">模板语法</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/" style="font-size: 10px;">端口占用</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 10px;">简历</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">类型转换</a> <a href="/tags/%E8%8A%82%E6%B5%81/" style="font-size: 10px;">节流</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a> <a href="/tags/%E9%98%B2%E6%8A%96/" style="font-size: 10px;">防抖</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/">Java文件处理常用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/chang-yong-cha-jian-bei-fen/">常用插件备份</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/chang-yong-lian-jie-bei-wang/">常用链接备忘</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/windows-xi-tong-xiu-gai-jar-nei-rong/">Windows系统修改jar包中的文件或者依赖</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/09/css-xue-xi-si/">css学习四</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 于北往南<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

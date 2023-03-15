@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>css学习一 | 于北往南的小屋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS 学习一从涉及前端开发到现在，差不多有四年了，框架有Vue、Angular，组件库用了ElementUI、NG-Zorro、Ant-Design。而对于CSS，可谓东一榔头，西一棒子，用时查找，不用忘掉。这次决定花点时间，系统的学习一下CSS，毕竟上一次学，还是大二的时候。（我逝去的青春啊！！😭😭） 定义层叠样式表，用于设计HTML的风格和布局，字体、颜色、大小、间距等等。 语法CSS由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css学习一">
+<meta property="og:url" content="http://example.com/2022/04/03/css-xue-xi-yi/index.html">
+<meta property="og:site_name" content="于北往南的小屋">
+<meta property="og:description" content="CSS 学习一从涉及前端开发到现在，差不多有四年了，框架有Vue、Angular，组件库用了ElementUI、NG-Zorro、Ant-Design。而对于CSS，可谓东一榔头，西一棒子，用时查找，不用忘掉。这次决定花点时间，系统的学习一下CSS，毕竟上一次学，还是大二的时候。（我逝去的青春啊！！😭😭） 定义层叠样式表，用于设计HTML的风格和布局，字体、颜色、大小、间距等等。 语法CSS由">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-03T09:55:57.000Z">
+<meta property="article:modified_time" content="2023-03-15T05:29:34.487Z">
+<meta property="article:author" content="于北往南">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="于北往南的小屋" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">于北往南的小屋</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css学习一" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/03/css-xue-xi-yi/" class="article-date">
+  <time datetime="2022-04-03T09:55:57.000Z" itemprop="datePublished">2022-04-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css学习一
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS-学习一"><a href="#CSS-学习一" class="headerlink" title="CSS 学习一"></a>CSS 学习一</h2><p>从涉及前端开发到现在，差不多有四年了，框架有<code>Vue</code>、<code>Angular</code>，组件库用了<code>ElementUI</code>、<code>NG-Zorro</code>、<code>Ant-Design</code>。<br>而对于<code>CSS</code>，可谓东一榔头，西一棒子，用时查找，不用忘掉。这次决定花点时间，系统的学习一下<code>CSS</code>，毕竟上一次学，还是大二的时候。（我逝去的青春啊！！😭😭）</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>层叠样式表，用于设计<code>HTML</code>的风格和布局，字体、颜色、大小、间距等等。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>CSS</code>由两部分组成：选择器，以及声明。<br>一个熟悉与值的键值被称为声明，而将一个或者多个声明用<code>&#123;&#125;</code>括起来，就是声明块。<br>声明作用到对应的<code>HTML</code>元素，就要加上选择器。</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><h4 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h4><ul>
+<li>标签选择器：<code>h1</code></li>
+<li>类选择器：<code>.checked</code></li>
+<li>ID 选择器：<code>#picker</code></li>
+<li>通配选择器：<code>*</code></li>
+</ul>
+<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><ul>
+<li>[attr]：指定属性的元素</li>
+<li>[attr=val]：属性等于指定值的元素</li>
+<li>[attr*=val]：属性包含指定值的元素</li>
+<li>[attr^=val]：属性以指定值开头的元素</li>
+<li>[attr$=val]：属性以指定值结尾的元素</li>
+<li>[attribute~=val]：属性包含指定值（完整单词）的元素（不推荐使用）</li>
+<li>[attr|val]：属性以指定（完整单词）开头的元素（不推荐使用）</li>
+</ul>
+<h4 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h4><ul>
+<li>相邻兄弟选择器：<code>A+B</code></li>
+<li>普通兄弟选择器：<code>A~B</code></li>
+<li>子选择器：<code>A&gt;B</code></li>
+<li>后代选择器：<code>AB</code></li>
+</ul>
+<h4 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h4><h5 id="条件伪类"><a href="#条件伪类" class="headerlink" title="条件伪类"></a>条件伪类</h5><ul>
+<li><code>:lang()</code>：基于元素语言来匹配页面元素</li>
+<li><code>:dir()</code>：匹配特定文字书写方向的元素</li>
+<li><code>:has()</code>：匹配包含指定元素的元素</li>
+<li><code>:is()</code>：匹配指定选择器列表里的元素</li>
+<li><code>:not()</code>：用来匹配不符合一组选择器的元素</li>
+</ul>
+<h5 id="行为伪类"><a href="#行为伪类" class="headerlink" title="行为伪类"></a>行为伪类</h5><p>-<code>:active</code>：鼠标激活的元素 -<code>:hover</code>：鼠标悬浮的元素 -<code>::selection</code>：鼠标选中的元素</p>
+<h5 id="状态伪类"><a href="#状态伪类" class="headerlink" title="状态伪类"></a>状态伪类</h5><ul>
+<li><code>:target</code>：当前锚点的元素</li>
+<li><code>:link</code>：未访问的链接元素</li>
+<li><code>:visited</code>：已访问的链接元素</li>
+<li><code>:focus</code>：输入聚焦的表单元素</li>
+<li><code>:required</code>：输入必填的表单元素</li>
+<li><code>:valid</code>：输入合法的表单元素</li>
+<li><code>：invalid</code>：输入非法的表单元素</li>
+<li><code>:in-range</code>：输入范围以内的表单元素</li>
+<li><code>out-of-range</code>：输入范围以外的表单元素</li>
+<li><code>checked</code>：选项选中的表单元素</li>
+<li><code>optional</code>：选项可选的表单元素</li>
+<li><code>enabled</code>：事件启用的表单元素</li>
+<li><code>disabled</code>：事件禁用的表单元素</li>
+<li><code>read-only</code>：只读的表单元素</li>
+<li><code>read-write</code>：可读可写的表单元素</li>
+<li><code>blank</code>：输入为空的表单元素</li>
+<li><code>current()</code>：浏览中的元素</li>
+<li><code>past()</code>：已浏览的元素</li>
+<li><code>future</code>：未浏览的元素</li>
+</ul>
+<h5 id="结构伪类"><a href="#结构伪类" class="headerlink" title="结构伪类"></a>结构伪类</h5><ul>
+<li><code>：root</code>：文档的根元素</li>
+<li><code>:empty</code>： 无子元素的元素</li>
+<li><code>:first-letter</code>：元素的首字母</li>
+<li><code>:first-line</code>：元素的首行</li>
+<li><code>:nth-child(n)</code>：元素中指定书序索引的元素</li>
+<li><code>:nth-last-child(n)</code>：元素中指定逆序索引的元素</li>
+<li><code>:first-child</code>：元素中为首的元素</li>
+<li><code>:last-child</code>：元素中为尾的元素</li>
+<li><code>:only-child</code>：父元素仅有该元素的元素</li>
+<li><code>:nth-of-type(n)</code>：标签中指定顺序索引的标签</li>
+<li><code>:nth-last-of-type(n)</code>：标签中指定逆序索引的标签</li>
+<li><code>:first-of-type</code>：标签中为首的标签</li>
+<li><code>:last-of-type</code>：标签中为尾标签</li>
+<li><code>:only-of-type</code>：父元素仅有该标签的标签</li>
+</ul>
+<h5 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h5><ul>
+<li><code>::before</code>：在元素前插入内容</li>
+<li><code>::after</code>：在元素后插入内容</li>
+</ul>
+<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><ul>
+<li>!important</li>
+<li>内联样式</li>
+<li>ID 选择器</li>
+<li>类选择、伪类选择器、属性选择器</li>
+<li>元素选择器、伪元素选择器</li>
+<li>通配选择器、后代选择器、兄弟选择器</li>
+</ul>
+<h3 id="CSS-Backgrounds"><a href="#CSS-Backgrounds" class="headerlink" title="CSS Backgrounds"></a>CSS Backgrounds</h3><ul>
+<li><p><code>background</code>：将背景属性设置在一个声明中</p>
+</li>
+<li><p><code>background-attachment</code>：背景图像是否固定或者随着页面的其余部分滚动</p>
+<ul>
+<li><code>scroll</code>：随着页面的滚动而滚动（默认值）</li>
+<li><code>fixed</code>：不会随着页面的滚动而滚动</li>
+<li><code>local</code>：随着元素的内容的滚动而滚动</li>
+<li><code>initial</code>：使用默认值</li>
+<li><code>inherit</code>：继承父元素的属性</li>
+</ul>
+</li>
+<li><p><code>background-color</code>：设置元素的背景颜色</p>
+<ul>
+<li><code>color</code>：背景颜色</li>
+<li><code>transparent</code>：背景颜色透明</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>background-image</code>：把图像设置为背景</p>
+<ul>
+<li><code>linear-gradient()</code>：创建一个线性渐变的”图像”（从上而下）</li>
+<li><code>radial-gradient()</code>：用径向渐变创建”图像”</li>
+<li><code>repeating-linear-gradient()</code>：创建重复的线性渐变”图像”</li>
+<li><code>repeating-radial-gradient()</code>：创建重复的径向渐变”图像”</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>background-position</code>：设置起始位置</p>
+<ul>
+<li><code>left/top/centet/bottom/right</code>：仅指定一个时，其他值会是center</li>
+<li><code>x% y%</code>：水平位置% 垂直位置%，左上角是0%0%，右下角是100%100%，仅指定一个值，其他将是50%</li>
+<li><code>xpos ypos</code>：水平位置 垂直位置，左上角是0，仅指定一个值，其他将是50%</li>
+<li><code>inherit</code>：继承父元素</li>
+</ul>
+</li>
+<li><p><code>background-repeat</code>：设置是否及如何重复</p>
+<ul>
+<li><code>repeat</code>：垂直和水平方向重复（默认值）</li>
+<li><code>repeat-x</code>：水平重复</li>
+<li><code>repeat-y</code>：垂直重复</li>
+<li><code>no-repeat</code>：不重复</li>
+<li><code>inherit</code>：继承父元素的属性</li>
+</ul>
+</li>
+</ul>
+<h2 id="喟然叹息😒😒"><a href="#喟然叹息😒😒" class="headerlink" title="喟然叹息😒😒"></a>喟然叹息😒😒</h2><p><strong><font size=4>凤栖梧</strong> </font><font size=2>柳永</font></p>
+<p><strong>伫倚危楼风细细，</strong></p>
+<p><em>望极春愁，</em></p>
+<p><strong>黯黯生天际。</strong></p>
+<p><em>草色烟光残照里，</em></p>
+<p><strong>无言谁会凭栏意。</strong></p>
+<p><em>拟把疏狂图一醉，</em></p>
+<p><strong>对酒当歌，</strong></p>
+<p><em>强乐还无味。</em></p>
+<p><strong>衣带渐宽终不悔，</strong></p>
+<p><em>为伊消得人憔悴。</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/03/css-xue-xi-yi/" data-id="clf98tg35002cd8ou0vqa3hwc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/04/css-xue-xi-er/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          css学习二
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/27/async-await-de-li-jie/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">async/await的理解</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">.Net</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Net/Winform/">Winform</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/DB/">DB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/DB/Elasticsearch/">Elasticsearch</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vscode/">Vscode</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vscode/%E6%8F%92%E4%BB%B6/">插件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA/">个人</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/">Windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%93%BE%E6%8E%A5/">链接</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoUpdater/" rel="tag">AutoUpdater</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CefSharp/" rel="tag">CefSharp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hive/" rel="tag">Hive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%A8%A1%E5%9E%8B/" rel="tag">IO模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVVM%E6%A8%A1%E5%9E%8B/" rel="tag">MVVM模型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Batch/" rel="tag">Spring Batch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/URL/" rel="tag">URL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Utils/" rel="tag">Utils</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vscode/" rel="tag">Vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/async-await/" rel="tag">async/await</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/el%E4%B8%8Edata/" rel="tag">el与data</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/equals/" rel="tag">equals</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar%E5%8C%85/" rel="tag">jar包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">单向绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">双向绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/" rel="tag">客户端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B1%85%E4%B8%AD/" rel="tag">居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5/" rel="tag">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%95%E5%85%A5JS/" rel="tag">引入JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AA%E7%8E%AF/" rel="tag">循环</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" rel="tag">批处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A7%E4%BB%B6/" rel="tag">控件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" rel="tag">文件处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90/" rel="tag">日期解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" rel="tag">模板语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/" rel="tag">端口占用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%80%E5%8E%86/" rel="tag">简历</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" rel="tag">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8A%82%E6%B5%81/" rel="tag">节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E6%8E%A5/" rel="tag">链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%98%B2%E6%8A%96/" rel="tag">防抖</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AutoUpdater/" style="font-size: 10px;">AutoUpdater</a> <a href="/tags/CefSharp/" style="font-size: 10px;">CefSharp</a> <a href="/tags/Elasticsearch/" style="font-size: 10px;">Elasticsearch</a> <a href="/tags/Hive/" style="font-size: 10px;">Hive</a> <a href="/tags/IO%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">IO模型</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/LeetCode/" style="font-size: 17.5px;">LeetCode</a> <a href="/tags/MVVM%E6%A8%A1%E5%9E%8B/" style="font-size: 10px;">MVVM模型</a> <a href="/tags/Spring-Batch/" style="font-size: 10px;">Spring Batch</a> <a href="/tags/URL/" style="font-size: 10px;">URL</a> <a href="/tags/Utils/" style="font-size: 12.5px;">Utils</a> <a href="/tags/Vscode/" style="font-size: 10px;">Vscode</a> <a href="/tags/async-await/" style="font-size: 10px;">async/await</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/el%E4%B8%8Edata/" style="font-size: 10px;">el与data</a> <a href="/tags/equals/" style="font-size: 10px;">equals</a> <a href="/tags/jar%E5%8C%85/" style="font-size: 10px;">jar包</a> <a href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" style="font-size: 10px;">单向绑定</a> <a href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" style="font-size: 10px;">双向绑定</a> <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/" style="font-size: 12.5px;">客户端</a> <a href="/tags/%E5%B1%85%E4%B8%AD/" style="font-size: 10px;">居中</a> <a href="/tags/%E5%BC%82%E6%AD%A5/" style="font-size: 10px;">异步</a> <a href="/tags/%E5%BC%95%E5%85%A5JS/" style="font-size: 10px;">引入JS</a> <a href="/tags/%E5%BE%AA%E7%8E%AF/" style="font-size: 10px;">循环</a> <a href="/tags/%E6%89%B9%E5%A4%84%E7%90%86/" style="font-size: 10px;">批处理</a> <a href="/tags/%E6%8E%A7%E4%BB%B6/" style="font-size: 10px;">控件</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 20px;">数组</a> <a href="/tags/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" style="font-size: 10px;">文件处理</a> <a href="/tags/%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">日期解析</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95/" style="font-size: 10px;">模板语法</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" style="font-size: 10px;">浏览器</a> <a href="/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/" style="font-size: 10px;">端口占用</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 10px;">简历</a> <a href="/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">类型转换</a> <a href="/tags/%E8%8A%82%E6%B5%81/" style="font-size: 10px;">节流</a> <a href="/tags/%E9%93%BE%E6%8E%A5/" style="font-size: 10px;">链接</a> <a href="/tags/%E9%98%B2%E6%8A%96/" style="font-size: 10px;">防抖</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/">Java文件处理常用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/chang-yong-cha-jian-bei-fen/">常用插件备份</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/chang-yong-lian-jie-bei-wang/">常用链接备忘</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/29/windows-xi-tong-xiu-gai-jar-nei-rong/">Windows系统修改jar包中的文件或者依赖</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/09/css-xue-xi-si/">css学习四</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 于北往南<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
