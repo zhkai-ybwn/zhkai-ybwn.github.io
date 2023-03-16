@@ -12,7 +12,7 @@ categories: [个人]
 - 张凯/男/1996.12.28
 - 本科/淮阴工学院（计算机科学与技术专业）
 - 工作年限：4 年
-- 技术博客：<https://zhkaif.github.io/>
+- 技术博客：<https://zhkai-ybwn.github.io//>
 
 ## 联系方式
 
