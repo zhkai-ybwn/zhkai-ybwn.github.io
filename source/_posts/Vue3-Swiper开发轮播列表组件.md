@@ -193,3 +193,7 @@ categories:
 - loop：设置为 true 则开启循环(loop)模式。loop模式：会在原本slide 前后复制若干个slide (默认一个)并在合适的时候切换，让Swiper看起来像是循环的。复制的slide 上有一些额外的类名代表他是生成的
 - direction：Swiper的滑动方向，可设置为水平方向切换 horizontal 或垂直方向切换 vertical
 - slidesPerView：设置slider容器能够同时显示的slides数量(carousel模式)。可以设置为数字（可为小数，小数不可loop），或者 'auto'则自动根据slides的宽度来设定数量
+
+#### 效果展示
+
+![avatar](https://pic.imgdb.cn/item/6417ee7fa682492fcc66a2c9.gif)
