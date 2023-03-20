@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>双向绑定和单向绑定 | 于北往南的小屋</title>
+  <title>归档: 2023/3 | 于北往南的小屋</title>
 
   <link rel="icon" type="image/jpeg" href="https://pic.imgdb.cn/item/64112999ebf10e5d536a3556.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -479,616 +479,106 @@
   
 </header>
         <!-- 内容区域 -->
-        
- <!-- prismjs 代码高亮 -->
- 
-
-
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
-
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        双向绑定和单向绑定
-      </span>
-    </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-04-07 |
-        </span>
-      
-
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-detail-header_category">
-              前端
-            </a>
-          
-            <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" class="post-detail-header_category">
-              Vue
-            </a>
-          
-        </span>
-      
-
-      
-        <div class="post-detail-header_wordcount">
-          <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 598 |
-          </span>
-  
-          <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 2分钟 |
-          </span>
-  
-          
-            <span class="reading">
-              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
-            </span>
-          
-        </div>
-      
-    
+        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
+  <div class="archive-header-title">
+    archive
   </div>
+  <div class="archive-header-desc">
   
-  
-    <script src="/js/bubble/bubble.js"></script>
-  
-</div>
-
-
-
-
-
-<div class="post-detail-content post-row" 
-  style="padding-top: 0px;">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>所谓数据绑定，就是指<code>View</code>层和<code>Model</code>层之间的映射关系</p>
-<h3 id="单向绑定"><a href="#单向绑定" class="headerlink" title="单向绑定"></a>单向绑定</h3><p><code>Model</code>的更新会触发 View 的更新，而 View 的更新不会触发<code>Model</code>的更新，它们的作用是单向的。</p>
-<h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3><p><code>Model</code>的更新会触发<code>View</code>的更新，<code>View</code>的更新也会触发<code>Model</code>的更新，它们的作用是相互的。</p>
-<p><img src="https://img.imgdb.cn/item/606d43ca8322e6675caf6c70.jpg" class="lazyload placeholder" data-srcset="https://img.imgdb.cn/item/606d43ca8322e6675caf6c70.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="avatar"></p>
-<h3 id="React-采用单向数据绑定"><a href="#React-采用单向数据绑定" class="headerlink" title="React 采用单向数据绑定"></a>React 采用单向数据绑定</h3><p><img src="https://img.imgdb.cn/item/606d441d8322e6675caffcc3.jpg" class="lazyload placeholder" data-srcset="https://img.imgdb.cn/item/606d441d8322e6675caffcc3.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="avatar"><br>当用户访问<code>View</code>时，通过触发<code>Events</code>进行交互，而在相应<code>Events Handlers</code>中，会触发相应的<code>Actions</code>，而<code>Actions</code>通过调用<code>setState</code>方法对<code>View</code>的<code>State</code>进行更新，<code>State</code>更新后会触发<code>View</code>的重新渲染。</p>
-<p>单向数据绑定的优缺点：<br>优点：所有状态都可以被记录、跟踪，状态变化通过手动调用触发，源头易追溯。<br>缺点：会有很多类似的样板代码，代码量会相应的上升。</p>
-<h3 id="Vue-支持单向数据绑定和双向数据绑定"><a href="#Vue-支持单向数据绑定和双向数据绑定" class="headerlink" title="Vue 支持单向数据绑定和双向数据绑定"></a>Vue 支持单向数据绑定和双向数据绑定</h3><ul>
-<li>单项数据绑定：使用<code>v-bind</code>属性绑定、<code>v-on</code>事件绑定或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
-<li>双向数据绑定：使用<code>v-model</code>指令，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
-</ul>
-<p>Vue 的双向数据绑定就是指使用<code>v-model</code>指令进行数据绑定，而<code>v-model</code>本质上是<code>v-bind</code>和<code>v-on</code>相结合的语法糖，是框架自动帮我们实现了更新事件。换句话说，我们完全可以采用单向绑定，自己实现类似的双向数据绑定。</p>
-<p>双向数据绑定的优缺点：</p>
-<p>优点：在操作表单时使用<code>v-model</code>方便简单，可以省略繁琐或重复的<code>onChange</code>事件去处理每个表单数据的变化（减少代码量）。<br>缺点：属于暗箱操作，无法很好的追踪双向绑定的数据变化。</p>
-<h3 id="Angular-支持单向数据绑定和双向数据绑定"><a href="#Angular-支持单向数据绑定和双向数据绑定" class="headerlink" title="Angular 支持单向数据绑定和双向数据绑定"></a>Angular 支持单向数据绑定和双向数据绑定</h3><ul>
-<li>单向数据绑定：使用<code>[x]</code>属性绑定，<code>(x)</code>事件绑定或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
-<li>双向数据绑定：使用<code>[(x)]</code>语法，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
-</ul>
-<h3 id="AngularJS-支持单向数据绑定和双向数据绑定"><a href="#AngularJS-支持单向数据绑定和双向数据绑定" class="headerlink" title="AngularJS 支持单向数据绑定和双向数据绑定"></a>AngularJS 支持单向数据绑定和双向数据绑定</h3><ul>
-<li>单向数据绑定：使用<code>ng-bind</code>指令或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
-<li>双向数据绑定：使用<code>ng-model</code>指令，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
-</ul>
-<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6854573208646090765">https://juejin.cn/post/6854573208646090765</a></p>
-
-      </div>
-      <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" class="">
-              双向绑定
-            </a>
-          
-            <a href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" class="">
-              单向绑定
-            </a>
-          
-        </div>
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>作者:  </strong>于北往南</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>文章链接:  </strong>
-    <a href="/2021/04/07/shuang-xiang-bang-ding-he-dan-xiang-bang-ding/" target="_blank" title="双向绑定和单向绑定">http://example.com/2021/04/07/shuang-xiang-bang-ding-he-dan-xiang-bang-ding/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明:   </strong>
-      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      许可协议。转载请注明出处!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2021/04/08/leetcode-shu-zu-zhong-chong-fu-de-shu-zi/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">LeetCode数组中重复的数字</div>
-      </div>
-      
-      <!-- <div class="content">
-        LeetCode 数组中重复的数字题目描述在一个长度为 n 的数组 nums 里的所有数字都在 0~n-1 的范围内。数
-      </div> -->
-    </a>
-  </div>
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
-    </div>
-    <a href="/2021/04/07/leetcode-zi-ju-xing-cha-xun/" class="post-nav-link">
-      <div class="title">
-        下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">LeetCode子矩形查询</div>
-      </div>
-      <!-- <div class="content">
-        LeetCode 子矩形查询题目描述请你实现一个类SubrectangleQueries，它的构造函数的参数是一个row
-      </div> -->
-    </a>
-  </div>
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
+  <span class="title" id="archive-header-desc"></span>
+  <script>
+  function typedFn() {
+    const el = '#archive-header-desc';
+    const type = 'archive';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
   }
-</style>
-
-
-    
-    
-    <!-- 评论 -->
-    <!-- 评论 -->
-
-  <div id="myComment">
-    
-      <div id="gitment-container"></div>
-
-    
+  typedFn();
+</script>
+  
   </div>
-
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
-
-  </div>
-
-  <!-- 目录 -->
-  <aside id='l_side'>
-  
-    
-      <section class="widget side_blogger">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img src='https://pic.imgdb.cn/item/64112999ebf10e5d536a3556.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>于北往南</h2>
-        
-        
-          <p>与谁同坐，明月清风我</p>
-
-        
-        
-          <p><span id="jinrishici-sentence">于北往南的小屋</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/2572429235@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/zhkai-ybwn"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2572429235"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-  
-  
-
-  <div class="layout_sticky">    
-    
-      
-<section class="widget side_toc">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="toc-main">
-      <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-text">数据绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A"><span class="toc-text">单向绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A"><span class="toc-text">双向绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E9%87%87%E7%94%A8%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-text">React 采用单向数据绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-%E6%94%AF%E6%8C%81%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%92%8C%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-text">Vue 支持单向数据绑定和双向数据绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Angular-%E6%94%AF%E6%8C%81%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%92%8C%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-text">Angular 支持单向数据绑定和双向数据绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AngularJS-%E6%94%AF%E6%8C%81%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%92%8C%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-text">AngularJS 支持单向数据绑定和双向数据绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E5%9C%B0%E5%9D%80"><span class="toc-text">参考地址</span></a></li></ol> -->
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 手机端目录按钮 -->
-<div id="toc-mobile-btn">
-  <i class="fas fa-list-ul" aria-hidden="true"></i>
+  <div class="mask-box"></div>
 </div>
 
+<div class="archive-video">
+  <video class="full-video" autoplay loop muted>
+      <source style="width: 100%;height: 100vh;" src="/">
+  </video>
+  <div class="video-header-title">
+    archive
+  </div>
+  <div class="video-header-desc">
+  
+      <span class="title" id="archive-video-header-desc"></span>
+      <script>
+  function typedFn() {
+    const el = '#archive-video-header-desc';
+    const type = 'archive';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
+  }
+  typedFn();
+</script>
       
-  <section class="widget side_recent_post">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
-    
-  </header>
+  </div>
+  <div class="mask-box"></div>
+</div>
+
+<!-- hash算法 -->
 
 
-    <div class='content'>
-      
-      <!-- hash算法 -->
-      
-      <div class="aside-list">
+<div class="archive-main">
+  <section class="archive">
+    <div class="archive-content">
+      <ul class="post-archive">
         
-          <div class="aside-list-item">
+        
+          
             
+            <div class="year" data-aos="zoom-in-up">
+                <div class="bullet"></div>
+                <a href="/archives/2023">2023</a>
+            </div>
+          
+          <li class="post-item" data-aos="fade-left">
             
-            
-
             <div class="post-img-box">
               <a href="/2023/03/20/vue3-swiper-kai-fa-lun-bo-lie-biao-zu-jian/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" src="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                
-                  <span class="post-date">03-20</span>
-                
+                <span class="post-date">03-20</span>
               </div>
               <a class="post-title" href="/2023/03/20/vue3-swiper-kai-fa-lun-bo-lie-biao-zu-jian/">Vue3 + Swiper开发轮播列表组件</a>
             </div>
-          </div>
+          </li>
         
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">02-17</span>
-                
-              </div>
-              <a class="post-title" href="/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/">commons-io的Java文件处理常用方法</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2022/07/29/chang-yong-cha-jian-bei-fen/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">07-29</span>
-                
-              </div>
-              <a class="post-title" href="/2022/07/29/chang-yong-cha-jian-bei-fen/">常用插件备份</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2022/07/29/chang-yong-lian-jie-bei-wang/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">07-29</span>
-                
-              </div>
-              <a class="post-title" href="/2022/07/29/chang-yong-lian-jie-bei-wang/">常用链接备忘</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2022/07/29/windows-xi-tong-xiu-gai-jar-nei-rong/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-e434e3a2888fb4efb1844845b8791d1f_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-e434e3a2888fb4efb1844845b8791d1f_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">07-29</span>
-                
-              </div>
-              <a class="post-title" href="/2022/07/29/windows-xi-tong-xiu-gai-jar-nei-rong/">Windows系统修改jar包中的文件或者依赖</a>
-            </div>
-          </div>
-        
-      </div>
+      </ul>
     </div>
   </section>
-
+  <div class="w-70">
     
   </div>
-</aside>
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
 </div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-
-
-
-  <script>
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      if (window.mermaidJsLoad) mermaid.init()
-      else {
-        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
-          window.mermaidJsLoad = true
-          mermaid.initialize({
-            theme: 'default',
-          })
-          if ('true') {
-            mermaid.init();
-          }
-        })
-      }
-    }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
-
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
-  
-</script>
-
 
       </main>
     </div>
