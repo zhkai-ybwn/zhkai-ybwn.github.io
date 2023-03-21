@@ -196,4 +196,4 @@ categories:
 
 #### 效果展示
 
-![avatar](https://pic.imgdb.cn/item/6417ee7fa682492fcc66a2c9.gif)
+![轮播列表](https://pic.imgdb.cn/item/6417ee7fa682492fcc66a2c9.gif)
