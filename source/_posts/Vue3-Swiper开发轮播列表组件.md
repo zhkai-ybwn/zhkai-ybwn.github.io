@@ -194,6 +194,10 @@ categories:
 - direction：Swiper的滑动方向，可设置为水平方向切换 horizontal 或垂直方向切换 vertical
 - slidesPerView：设置slider容器能够同时显示的slides数量(carousel模式)。可以设置为数字（可为小数，小数不可loop），或者 'auto'则自动根据slides的宽度来设定数量
 
+#### 多行一组进行翻牌效果实现
+
+将`slidesPerView`和`slidesPerGroup`两个属性设置为每组行数即可
+
 #### 效果展示
 
 ![轮播列表](https://pic.imgdb.cn/item/6417ee7fa682492fcc66a2c9.gif)
