@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>css学习一 | 于北往南的小屋</title>
+  <title>归档: 2023/4 | 于北往南的小屋</title>
 
   <link rel="icon" type="image/jpeg" href="https://pic.imgdb.cn/item/64112999ebf10e5d536a3556.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -479,729 +479,106 @@
   
 </header>
         <!-- 内容区域 -->
-        
- <!-- prismjs 代码高亮 -->
- 
-
-
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
-
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        css学习一
-      </span>
-    </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-04-03 |
-        </span>
-      
-
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-detail-header_category">
-              前端
-            </a>
-          
-        </span>
-      
-
-      
-        <div class="post-detail-header_wordcount">
-          <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.3k |
-          </span>
-  
-          <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 4分钟 |
-          </span>
-  
-          
-            <span class="reading">
-              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
-            </span>
-          
-        </div>
-      
-    
+        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
+  <div class="archive-header-title">
+    archive
   </div>
+  <div class="archive-header-desc">
   
-  
-    <script src="/js/bubble/bubble.js"></script>
-  
-</div>
-
-
-
-
-
-<div class="post-detail-content post-row" 
-  style="padding-top: 0px;">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <h2 id="CSS-学习一"><a href="#CSS-学习一" class="headerlink" title="CSS 学习一"></a>CSS 学习一</h2><p>从涉及前端开发到现在，差不多有四年了，框架有<code>Vue</code>、<code>Angular</code>，组件库用了<code>ElementUI</code>、<code>NG-Zorro</code>、<code>Ant-Design</code>。<br>而对于<code>CSS</code>，可谓东一榔头，西一棒子，用时查找，不用忘掉。这次决定花点时间，系统的学习一下<code>CSS</code>，毕竟上一次学，还是大二的时候。（我逝去的青春啊！！😭😭）</p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>层叠样式表，用于设计<code>HTML</code>的风格和布局，字体、颜色、大小、间距等等。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>CSS</code>由两部分组成：选择器，以及声明。<br>一个熟悉与值的键值被称为声明，而将一个或者多个声明用<code>&#123;&#125;</code>括起来，就是声明块。<br>声明作用到对应的<code>HTML</code>元素，就要加上选择器。</p>
-<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><h4 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h4><ul>
-<li>标签选择器：<code>h1</code></li>
-<li>类选择器：<code>.checked</code></li>
-<li>ID 选择器：<code>#picker</code></li>
-<li>通配选择器：<code>*</code></li>
-</ul>
-<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><ul>
-<li>[attr]：指定属性的元素</li>
-<li>[attr=val]：属性等于指定值的元素</li>
-<li>[attr*=val]：属性包含指定值的元素</li>
-<li>[attr^=val]：属性以指定值开头的元素</li>
-<li>[attr$=val]：属性以指定值结尾的元素</li>
-<li>[attribute~=val]：属性包含指定值（完整单词）的元素（不推荐使用）</li>
-<li>[attr|val]：属性以指定（完整单词）开头的元素（不推荐使用）</li>
-</ul>
-<h4 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h4><ul>
-<li>相邻兄弟选择器：<code>A+B</code></li>
-<li>普通兄弟选择器：<code>A~B</code></li>
-<li>子选择器：<code>A&gt;B</code></li>
-<li>后代选择器：<code>AB</code></li>
-</ul>
-<h4 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h4><h5 id="条件伪类"><a href="#条件伪类" class="headerlink" title="条件伪类"></a>条件伪类</h5><ul>
-<li><code>:lang()</code>：基于元素语言来匹配页面元素</li>
-<li><code>:dir()</code>：匹配特定文字书写方向的元素</li>
-<li><code>:has()</code>：匹配包含指定元素的元素</li>
-<li><code>:is()</code>：匹配指定选择器列表里的元素</li>
-<li><code>:not()</code>：用来匹配不符合一组选择器的元素</li>
-</ul>
-<h5 id="行为伪类"><a href="#行为伪类" class="headerlink" title="行为伪类"></a>行为伪类</h5><p>-<code>:active</code>：鼠标激活的元素 -<code>:hover</code>：鼠标悬浮的元素 -<code>::selection</code>：鼠标选中的元素</p>
-<h5 id="状态伪类"><a href="#状态伪类" class="headerlink" title="状态伪类"></a>状态伪类</h5><ul>
-<li><code>:target</code>：当前锚点的元素</li>
-<li><code>:link</code>：未访问的链接元素</li>
-<li><code>:visited</code>：已访问的链接元素</li>
-<li><code>:focus</code>：输入聚焦的表单元素</li>
-<li><code>:required</code>：输入必填的表单元素</li>
-<li><code>:valid</code>：输入合法的表单元素</li>
-<li><code>：invalid</code>：输入非法的表单元素</li>
-<li><code>:in-range</code>：输入范围以内的表单元素</li>
-<li><code>out-of-range</code>：输入范围以外的表单元素</li>
-<li><code>checked</code>：选项选中的表单元素</li>
-<li><code>optional</code>：选项可选的表单元素</li>
-<li><code>enabled</code>：事件启用的表单元素</li>
-<li><code>disabled</code>：事件禁用的表单元素</li>
-<li><code>read-only</code>：只读的表单元素</li>
-<li><code>read-write</code>：可读可写的表单元素</li>
-<li><code>blank</code>：输入为空的表单元素</li>
-<li><code>current()</code>：浏览中的元素</li>
-<li><code>past()</code>：已浏览的元素</li>
-<li><code>future</code>：未浏览的元素</li>
-</ul>
-<h5 id="结构伪类"><a href="#结构伪类" class="headerlink" title="结构伪类"></a>结构伪类</h5><ul>
-<li><code>：root</code>：文档的根元素</li>
-<li><code>:empty</code>： 无子元素的元素</li>
-<li><code>:first-letter</code>：元素的首字母</li>
-<li><code>:first-line</code>：元素的首行</li>
-<li><code>:nth-child(n)</code>：元素中指定书序索引的元素</li>
-<li><code>:nth-last-child(n)</code>：元素中指定逆序索引的元素</li>
-<li><code>:first-child</code>：元素中为首的元素</li>
-<li><code>:last-child</code>：元素中为尾的元素</li>
-<li><code>:only-child</code>：父元素仅有该元素的元素</li>
-<li><code>:nth-of-type(n)</code>：标签中指定顺序索引的标签</li>
-<li><code>:nth-last-of-type(n)</code>：标签中指定逆序索引的标签</li>
-<li><code>:first-of-type</code>：标签中为首的标签</li>
-<li><code>:last-of-type</code>：标签中为尾标签</li>
-<li><code>:only-of-type</code>：父元素仅有该标签的标签</li>
-</ul>
-<h5 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h5><ul>
-<li><code>::before</code>：在元素前插入内容</li>
-<li><code>::after</code>：在元素后插入内容</li>
-</ul>
-<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><ul>
-<li>!important</li>
-<li>内联样式</li>
-<li>ID 选择器</li>
-<li>类选择、伪类选择器、属性选择器</li>
-<li>元素选择器、伪元素选择器</li>
-<li>通配选择器、后代选择器、兄弟选择器</li>
-</ul>
-<h3 id="CSS-Backgrounds"><a href="#CSS-Backgrounds" class="headerlink" title="CSS Backgrounds"></a>CSS Backgrounds</h3><ul>
-<li><p><code>background</code>：将背景属性设置在一个声明中</p>
-</li>
-<li><p><code>background-attachment</code>：背景图像是否固定或者随着页面的其余部分滚动</p>
-<ul>
-<li><code>scroll</code>：随着页面的滚动而滚动（默认值）</li>
-<li><code>fixed</code>：不会随着页面的滚动而滚动</li>
-<li><code>local</code>：随着元素的内容的滚动而滚动</li>
-<li><code>initial</code>：使用默认值</li>
-<li><code>inherit</code>：继承父元素的属性</li>
-</ul>
-</li>
-<li><p><code>background-color</code>：设置元素的背景颜色</p>
-<ul>
-<li><code>color</code>：背景颜色</li>
-<li><code>transparent</code>：背景颜色透明</li>
-<li><code>inherit</code>：继承父元素</li>
-</ul>
-</li>
-<li><p><code>background-image</code>：把图像设置为背景</p>
-<ul>
-<li><code>linear-gradient()</code>：创建一个线性渐变的”图像”（从上而下）</li>
-<li><code>radial-gradient()</code>：用径向渐变创建”图像”</li>
-<li><code>repeating-linear-gradient()</code>：创建重复的线性渐变”图像”</li>
-<li><code>repeating-radial-gradient()</code>：创建重复的径向渐变”图像”</li>
-<li><code>inherit</code>：继承父元素</li>
-</ul>
-</li>
-<li><p><code>background-position</code>：设置起始位置</p>
-<ul>
-<li><code>left/top/centet/bottom/right</code>：仅指定一个时，其他值会是center</li>
-<li><code>x% y%</code>：水平位置% 垂直位置%，左上角是0%0%，右下角是100%100%，仅指定一个值，其他将是50%</li>
-<li><code>xpos ypos</code>：水平位置 垂直位置，左上角是0，仅指定一个值，其他将是50%</li>
-<li><code>inherit</code>：继承父元素</li>
-</ul>
-</li>
-<li><p><code>background-repeat</code>：设置是否及如何重复</p>
-<ul>
-<li><code>repeat</code>：垂直和水平方向重复（默认值）</li>
-<li><code>repeat-x</code>：水平重复</li>
-<li><code>repeat-y</code>：垂直重复</li>
-<li><code>no-repeat</code>：不重复</li>
-<li><code>inherit</code>：继承父元素的属性</li>
-</ul>
-</li>
-</ul>
-<h2 id="喟然叹息😒😒"><a href="#喟然叹息😒😒" class="headerlink" title="喟然叹息😒😒"></a>喟然叹息😒😒</h2><p><strong><font size=4>凤栖梧</strong> </font><font size=2>柳永</font></p>
-<p><strong>伫倚危楼风细细，</strong></p>
-<p><em>望极春愁，</em></p>
-<p><strong>黯黯生天际。</strong></p>
-<p><em>草色烟光残照里，</em></p>
-<p><strong>无言谁会凭栏意。</strong></p>
-<p><em>拟把疏狂图一醉，</em></p>
-<p><strong>对酒当歌，</strong></p>
-<p><em>强乐还无味。</em></p>
-<p><strong>衣带渐宽终不悔，</strong></p>
-<p><em>为伊消得人憔悴。</em></p>
-
-      </div>
-      <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/tags/css/" class="">
-              css
-            </a>
-          
-        </div>
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>作者:  </strong>于北往南</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>文章链接:  </strong>
-    <a href="/2022/04/03/css-xue-xi-yi/" target="_blank" title="css学习一">http://example.com/2022/04/03/css-xue-xi-yi/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明:   </strong>
-      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      许可协议。转载请注明出处!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2022/04/04/css-xue-xi-er/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">css学习二</div>
-      </div>
-      
-      <!-- <div class="content">
-        CSS 学习二继续
-CSS 单位相对长度
-em：当前元素的字体尺寸
-ex：英文字母小x的高度
-ch：数字0的高度
-vw：
-      </div> -->
-    </a>
-  </div>
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
-    </div>
-    <a href="/2022/03/27/async-await-de-li-jie/" class="post-nav-link">
-      <div class="title">
-        下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">async/await的理解</div>
-      </div>
-      <!-- <div class="content">
-        async/await的理解遇到个五连回调的代码，真的是地狱级拷打，用async await进行了一波改写，顿时神清气爽
-      </div> -->
-    </a>
-  </div>
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
+  <span class="title" id="archive-header-desc"></span>
+  <script>
+  function typedFn() {
+    const el = '#archive-header-desc';
+    const type = 'archive';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
   }
-</style>
-
-
-    
-    
-    <!-- 评论 -->
-    <!-- 评论 -->
-
-  <div id="myComment">
-    
-      <div id="gitment-container"></div>
-
-    
+  typedFn();
+</script>
+  
   </div>
-
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
-
-  </div>
-
-  <!-- 目录 -->
-  <aside id='l_side'>
-  
-    
-      <section class="widget side_blogger">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img src='https://pic.imgdb.cn/item/64112999ebf10e5d536a3556.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>于北往南</h2>
-        
-        
-          <p>与谁同坐，明月清风我</p>
-
-        
-        
-          <p><span id="jinrishici-sentence">于北往南的小屋</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/2572429235@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/zhkai-ybwn"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2572429235"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-  
-  
-
-  <div class="layout_sticky">    
-    
-      
-<section class="widget side_toc">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="toc-main">
-      <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-%E5%AD%A6%E4%B9%A0%E4%B8%80"><span class="toc-text">CSS 学习一</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">基础选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">属性选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">组合选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E7%B1%BB"><span class="toc-text">伪类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E4%BC%AA%E7%B1%BB"><span class="toc-text">条件伪类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%8C%E4%B8%BA%E4%BC%AA%E7%B1%BB"><span class="toc-text">行为伪类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E4%BC%AA%E7%B1%BB"><span class="toc-text">状态伪类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB"><span class="toc-text">结构伪类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%AA%E5%85%83%E7%B4%A0"><span class="toc-text">伪元素</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-Backgrounds"><span class="toc-text">CSS Backgrounds</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%96%9F%E7%84%B6%E5%8F%B9%E6%81%AF%F0%9F%98%92%F0%9F%98%92"><span class="toc-text">喟然叹息😒😒</span></a></li></ol> -->
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 手机端目录按钮 -->
-<div id="toc-mobile-btn">
-  <i class="fas fa-list-ul" aria-hidden="true"></i>
+  <div class="mask-box"></div>
 </div>
 
+<div class="archive-video">
+  <video class="full-video" autoplay loop muted>
+      <source style="width: 100%;height: 100vh;" src="/">
+  </video>
+  <div class="video-header-title">
+    archive
+  </div>
+  <div class="video-header-desc">
+  
+      <span class="title" id="archive-video-header-desc"></span>
+      <script>
+  function typedFn() {
+    const el = '#archive-video-header-desc';
+    const type = 'archive';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
+  }
+  typedFn();
+</script>
       
-  <section class="widget side_recent_post">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
-    
-  </header>
+  </div>
+  <div class="mask-box"></div>
+</div>
+
+<!-- hash算法 -->
 
 
-    <div class='content'>
-      
-      <!-- hash算法 -->
-      
-      <div class="aside-list">
+<div class="archive-main">
+  <section class="archive">
+    <div class="archive-content">
+      <ul class="post-archive">
         
-          <div class="aside-list-item">
+        
+          
             
+            <div class="year" data-aos="zoom-in-up">
+                <div class="bullet"></div>
+                <a href="/archives/2023">2023</a>
+            </div>
+          
+          <li class="post-item" data-aos="fade-left">
             
-            
-
             <div class="post-img-box">
               <a href="/2023/04/07/html-js-shi-xian-duo-wen-jian-shang-chuan-yu-lan/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                
-                  <span class="post-date">04-07</span>
-                
+                <span class="post-date">04-07</span>
               </div>
               <a class="post-title" href="/2023/04/07/html-js-shi-xian-duo-wen-jian-shang-chuan-yu-lan/">html+js实现多文件上传、预览</a>
             </div>
-          </div>
+          </li>
         
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/03/30/vue3-zhong-mitt-de-shi-yong/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">03-30</span>
-                
-              </div>
-              <a class="post-title" href="/2023/03/30/vue3-zhong-mitt-de-shi-yong/">Vue3中Mitt的使用</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/03/20/vue3-zhong-shi-yong-pinia/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">03-20</span>
-                
-              </div>
-              <a class="post-title" href="/2023/03/20/vue3-zhong-shi-yong-pinia/">Vue3中使用pinia</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/03/20/vue3-swiper-kai-fa-lun-bo-lie-biao-zu-jian/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">03-20</span>
-                
-              </div>
-              <a class="post-title" href="/2023/03/20/vue3-swiper-kai-fa-lun-bo-lie-biao-zu-jian/">Vue3 + Swiper开发轮播列表组件</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">02-17</span>
-                
-              </div>
-              <a class="post-title" href="/2023/02/17/java-wen-jian-chu-li-chang-yong-fang-fa/">commons-io的Java文件处理常用方法</a>
-            </div>
-          </div>
-        
-      </div>
+      </ul>
     </div>
   </section>
-
+  <div class="w-70">
     
   </div>
-</aside>
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
 </div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-
-
-
-  <script>
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      if (window.mermaidJsLoad) mermaid.init()
-      else {
-        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
-          window.mermaidJsLoad = true
-          mermaid.initialize({
-            theme: 'default',
-          })
-          if ('true') {
-            mermaid.init();
-          }
-        })
-      }
-    }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
-
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
-  
-</script>
-
 
       </main>
     </div>

@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>css学习一 | 于北往南的小屋</title>
+  <title>html+js实现多文件上传、预览 | 于北往南的小屋</title>
 
   <link rel="icon" type="image/jpeg" href="https://pic.imgdb.cn/item/64112999ebf10e5d536a3556.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -493,21 +493,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        css学习一
+        html+js实现多文件上传、预览
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-04-03 |
+          <i class="fas fa-calendar"></i> 发表于：2023-04-07 |
         </span>
       
 
@@ -517,6 +517,10 @@
           
             <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-detail-header_category">
               前端
+            </a>
+          
+            <a href="/categories/%E5%89%8D%E7%AB%AF/HTML/" class="post-detail-header_category">
+              HTML
             </a>
           
         </span>
@@ -529,7 +533,7 @@
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 4分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 5分钟 |
           </span>
   
           
@@ -556,152 +560,36 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="CSS-学习一"><a href="#CSS-学习一" class="headerlink" title="CSS 学习一"></a>CSS 学习一</h2><p>从涉及前端开发到现在，差不多有四年了，框架有<code>Vue</code>、<code>Angular</code>，组件库用了<code>ElementUI</code>、<code>NG-Zorro</code>、<code>Ant-Design</code>。<br>而对于<code>CSS</code>，可谓东一榔头，西一棒子，用时查找，不用忘掉。这次决定花点时间，系统的学习一下<code>CSS</code>，毕竟上一次学，还是大二的时候。（我逝去的青春啊！！😭😭）</p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>层叠样式表，用于设计<code>HTML</code>的风格和布局，字体、颜色、大小、间距等等。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>CSS</code>由两部分组成：选择器，以及声明。<br>一个熟悉与值的键值被称为声明，而将一个或者多个声明用<code>&#123;&#125;</code>括起来，就是声明块。<br>声明作用到对应的<code>HTML</code>元素，就要加上选择器。</p>
-<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><h4 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h4><ul>
-<li>标签选择器：<code>h1</code></li>
-<li>类选择器：<code>.checked</code></li>
-<li>ID 选择器：<code>#picker</code></li>
-<li>通配选择器：<code>*</code></li>
-</ul>
-<h4 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h4><ul>
-<li>[attr]：指定属性的元素</li>
-<li>[attr=val]：属性等于指定值的元素</li>
-<li>[attr*=val]：属性包含指定值的元素</li>
-<li>[attr^=val]：属性以指定值开头的元素</li>
-<li>[attr$=val]：属性以指定值结尾的元素</li>
-<li>[attribute~=val]：属性包含指定值（完整单词）的元素（不推荐使用）</li>
-<li>[attr|val]：属性以指定（完整单词）开头的元素（不推荐使用）</li>
-</ul>
-<h4 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h4><ul>
-<li>相邻兄弟选择器：<code>A+B</code></li>
-<li>普通兄弟选择器：<code>A~B</code></li>
-<li>子选择器：<code>A&gt;B</code></li>
-<li>后代选择器：<code>AB</code></li>
-</ul>
-<h4 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h4><h5 id="条件伪类"><a href="#条件伪类" class="headerlink" title="条件伪类"></a>条件伪类</h5><ul>
-<li><code>:lang()</code>：基于元素语言来匹配页面元素</li>
-<li><code>:dir()</code>：匹配特定文字书写方向的元素</li>
-<li><code>:has()</code>：匹配包含指定元素的元素</li>
-<li><code>:is()</code>：匹配指定选择器列表里的元素</li>
-<li><code>:not()</code>：用来匹配不符合一组选择器的元素</li>
-</ul>
-<h5 id="行为伪类"><a href="#行为伪类" class="headerlink" title="行为伪类"></a>行为伪类</h5><p>-<code>:active</code>：鼠标激活的元素 -<code>:hover</code>：鼠标悬浮的元素 -<code>::selection</code>：鼠标选中的元素</p>
-<h5 id="状态伪类"><a href="#状态伪类" class="headerlink" title="状态伪类"></a>状态伪类</h5><ul>
-<li><code>:target</code>：当前锚点的元素</li>
-<li><code>:link</code>：未访问的链接元素</li>
-<li><code>:visited</code>：已访问的链接元素</li>
-<li><code>:focus</code>：输入聚焦的表单元素</li>
-<li><code>:required</code>：输入必填的表单元素</li>
-<li><code>:valid</code>：输入合法的表单元素</li>
-<li><code>：invalid</code>：输入非法的表单元素</li>
-<li><code>:in-range</code>：输入范围以内的表单元素</li>
-<li><code>out-of-range</code>：输入范围以外的表单元素</li>
-<li><code>checked</code>：选项选中的表单元素</li>
-<li><code>optional</code>：选项可选的表单元素</li>
-<li><code>enabled</code>：事件启用的表单元素</li>
-<li><code>disabled</code>：事件禁用的表单元素</li>
-<li><code>read-only</code>：只读的表单元素</li>
-<li><code>read-write</code>：可读可写的表单元素</li>
-<li><code>blank</code>：输入为空的表单元素</li>
-<li><code>current()</code>：浏览中的元素</li>
-<li><code>past()</code>：已浏览的元素</li>
-<li><code>future</code>：未浏览的元素</li>
-</ul>
-<h5 id="结构伪类"><a href="#结构伪类" class="headerlink" title="结构伪类"></a>结构伪类</h5><ul>
-<li><code>：root</code>：文档的根元素</li>
-<li><code>:empty</code>： 无子元素的元素</li>
-<li><code>:first-letter</code>：元素的首字母</li>
-<li><code>:first-line</code>：元素的首行</li>
-<li><code>:nth-child(n)</code>：元素中指定书序索引的元素</li>
-<li><code>:nth-last-child(n)</code>：元素中指定逆序索引的元素</li>
-<li><code>:first-child</code>：元素中为首的元素</li>
-<li><code>:last-child</code>：元素中为尾的元素</li>
-<li><code>:only-child</code>：父元素仅有该元素的元素</li>
-<li><code>:nth-of-type(n)</code>：标签中指定顺序索引的标签</li>
-<li><code>:nth-last-of-type(n)</code>：标签中指定逆序索引的标签</li>
-<li><code>:first-of-type</code>：标签中为首的标签</li>
-<li><code>:last-of-type</code>：标签中为尾标签</li>
-<li><code>:only-of-type</code>：父元素仅有该标签的标签</li>
-</ul>
-<h5 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h5><ul>
-<li><code>::before</code>：在元素前插入内容</li>
-<li><code>::after</code>：在元素后插入内容</li>
-</ul>
-<h4 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h4><ul>
-<li>!important</li>
-<li>内联样式</li>
-<li>ID 选择器</li>
-<li>类选择、伪类选择器、属性选择器</li>
-<li>元素选择器、伪元素选择器</li>
-<li>通配选择器、后代选择器、兄弟选择器</li>
-</ul>
-<h3 id="CSS-Backgrounds"><a href="#CSS-Backgrounds" class="headerlink" title="CSS Backgrounds"></a>CSS Backgrounds</h3><ul>
-<li><p><code>background</code>：将背景属性设置在一个声明中</p>
-</li>
-<li><p><code>background-attachment</code>：背景图像是否固定或者随着页面的其余部分滚动</p>
-<ul>
-<li><code>scroll</code>：随着页面的滚动而滚动（默认值）</li>
-<li><code>fixed</code>：不会随着页面的滚动而滚动</li>
-<li><code>local</code>：随着元素的内容的滚动而滚动</li>
-<li><code>initial</code>：使用默认值</li>
-<li><code>inherit</code>：继承父元素的属性</li>
-</ul>
-</li>
-<li><p><code>background-color</code>：设置元素的背景颜色</p>
-<ul>
-<li><code>color</code>：背景颜色</li>
-<li><code>transparent</code>：背景颜色透明</li>
-<li><code>inherit</code>：继承父元素</li>
-</ul>
-</li>
-<li><p><code>background-image</code>：把图像设置为背景</p>
-<ul>
-<li><code>linear-gradient()</code>：创建一个线性渐变的”图像”（从上而下）</li>
-<li><code>radial-gradient()</code>：用径向渐变创建”图像”</li>
-<li><code>repeating-linear-gradient()</code>：创建重复的线性渐变”图像”</li>
-<li><code>repeating-radial-gradient()</code>：创建重复的径向渐变”图像”</li>
-<li><code>inherit</code>：继承父元素</li>
-</ul>
-</li>
-<li><p><code>background-position</code>：设置起始位置</p>
-<ul>
-<li><code>left/top/centet/bottom/right</code>：仅指定一个时，其他值会是center</li>
-<li><code>x% y%</code>：水平位置% 垂直位置%，左上角是0%0%，右下角是100%100%，仅指定一个值，其他将是50%</li>
-<li><code>xpos ypos</code>：水平位置 垂直位置，左上角是0，仅指定一个值，其他将是50%</li>
-<li><code>inherit</code>：继承父元素</li>
-</ul>
-</li>
-<li><p><code>background-repeat</code>：设置是否及如何重复</p>
-<ul>
-<li><code>repeat</code>：垂直和水平方向重复（默认值）</li>
-<li><code>repeat-x</code>：水平重复</li>
-<li><code>repeat-y</code>：垂直重复</li>
-<li><code>no-repeat</code>：不重复</li>
-<li><code>inherit</code>：继承父元素的属性</li>
-</ul>
-</li>
-</ul>
-<h2 id="喟然叹息😒😒"><a href="#喟然叹息😒😒" class="headerlink" title="喟然叹息😒😒"></a>喟然叹息😒😒</h2><p><strong><font size=4>凤栖梧</strong> </font><font size=2>柳永</font></p>
-<p><strong>伫倚危楼风细细，</strong></p>
-<p><em>望极春愁，</em></p>
-<p><strong>黯黯生天际。</strong></p>
-<p><em>草色烟光残照里，</em></p>
-<p><strong>无言谁会凭栏意。</strong></p>
-<p><em>拟把疏狂图一醉，</em></p>
-<p><strong>对酒当歌，</strong></p>
-<p><em>强乐还无味。</em></p>
-<p><strong>衣带渐宽终不悔，</strong></p>
-<p><em>为伊消得人憔悴。</em></p>
+        <h2 id="html-js实现多文件上传、预览"><a href="#html-js实现多文件上传、预览" class="headerlink" title="html+js实现多文件上传、预览"></a>html+js实现多文件上传、预览</h2><p>当我们需要上传图片时，一般是通过文件上传的方式上传图片到服务器，但有时候我们需要在上传之前预览图片，以便查看是否选择了正确的图片或者调整裁剪等。这时我们就需要用到前端技术来实现图片预览功能。<br>下面将介绍如何使用 HTML、CSS 和 JavaScript 实现文件上传和图片预览的功能，具体实现如下。</p>
+<h3 id="文件上传表单和预览区"><a href="#文件上传表单和预览区" class="headerlink" title="文件上传表单和预览区"></a>文件上传表单和预览区</h3><p>首先，我们需要一个文件上传表单和一个预览区域。文件上传表单可以使用标准的 HTML <code>&lt;form&gt;</code>标签实现，如下所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;#&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">enctype</span>=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fileToUpload&quot;</span> <span class="attr">id</span>=<span class="string">&quot;fileToUpload&quot;</span> <span class="attr">multiple</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;上传文件&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个表单包含一个文件选择框和一个提交按钮，用户可以通过文件选择框选择要上传的文件并点击提交按钮上传。<br>为了实现预览功能，我们还需要一个预览区域，用于在上传文件之前显示选择的图像文件。预览区域可以使用一个空的 <code>&lt;div&gt;</code>元素实现，如下所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 图像预览区域 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;imagePreviews&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，我们将预览区域的 ID 设置为<code>imagePreview</code>。</p>
+<h3 id="CSS样式"><a href="#CSS样式" class="headerlink" title="CSS样式"></a>CSS样式</h3><p>为预览区域定义一些基本的 CSS 样式，并确保它的大小和文件上传框的大小相同，如下所示</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#imagePreview</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#eee</span>;</span><br><span class="line">    <span class="attribute">background-size</span>: contain;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>: center center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个 CSS 样式定义了预览区域的宽度、高度、边距、背景颜色和背景图像属性，使其以一种较为合理的方式呈现预览图片。在这个示例中，我们将预览区域的大小设置为 200 x 200 像素，并将背景颜色设置为浅灰色</p>
+<h3 id="JavaScript-实现文件上传和预览"><a href="#JavaScript-实现文件上传和预览" class="headerlink" title="JavaScript 实现文件上传和预览"></a>JavaScript 实现文件上传和预览</h3><p>现在，我们需要一些 JavaScript 代码来实现文件上传和图像预览的功能</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取文件上传表单中的 input 元素</span></span><br><span class="line"><span class="keyword">var</span> fileInput = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;fileToUpload&#x27;</span>);</span><br><span class="line"><span class="comment">// 监听 input 元素的 onchange 事件</span></span><br><span class="line">fileInput.<span class="title function_">addEventListener</span>(<span class="string">&#x27;change&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line"><span class="comment">// 获取上传的文件</span></span><br><span class="line"><span class="keyword">var</span> file = event.<span class="property">target</span>.<span class="property">files</span>[<span class="number">0</span>];</span><br><span class="line"><span class="comment">// 如果上传的文件是图像文件，则进行预览</span></span><br><span class="line"><span class="keyword">if</span> (file.<span class="property">type</span>.<span class="title function_">match</span>(<span class="string">&#x27;image.*&#x27;</span>)) &#123;</span><br><span class="line">    <span class="keyword">var</span> reader = <span class="keyword">new</span> <span class="title class_">FileReader</span>();</span><br><span class="line">    <span class="comment">// 将图像文件转换为 Data URL</span></span><br><span class="line">    reader.<span class="title function_">readAsDataURL</span>(file);</span><br><span class="line">    <span class="comment">// 当读取完成时，显示预览图像</span></span><br><span class="line">    reader.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> imagePreview = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;imagePreview&#x27;</span>);</span><br><span class="line">    imagePreview.<span class="property">style</span>.<span class="property">backgroundImage</span> = <span class="string">&#x27;url(&#x27;</span> + reader.<span class="property">result</span> + <span class="string">&#x27;)&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这个示例代码使用了<code>JavaScript</code>监听文件上传表单中的<code>input</code>元素的<code>onChange</code>事件。在事件回调函数中，我们判断上传的文件是否为图像文件，如果是，则创建一个新的 FileReader 对象，并调用它的<code>readAsDataURL</code>方法将文件转换为 Data URL。最后，我们使用 Image 的 CSS 属性将 Data URL 应用到预览区域的背景图片上，以显示图像预览。</p>
+<h3 id="实现多文件上传和预览"><a href="#实现多文件上传和预览" class="headerlink" title="实现多文件上传和预览"></a>实现多文件上传和预览</h3><p>如果需要同时上传多个文件并预览它们，可以使用<code>multiple</code>属性将输入框设置为多选模式，并稍加修改 JavaScript 代码来处理多个文件。<br>以下是针对多文件上传和预览的JavaScript和CSS代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取文件上传表单中的 input 元素</span></span><br><span class="line"><span class="keyword">var</span> fileInput = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;fileToUpload&#x27;</span>);</span><br><span class="line"><span class="comment">// 监听 input 元素的 onchange 事件</span></span><br><span class="line">fileInput.<span class="title function_">addEventListener</span>(<span class="string">&#x27;change&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// 获取上传的文件</span></span><br><span class="line">  <span class="keyword">var</span> files = event.<span class="property">target</span>.<span class="property">files</span>;</span><br><span class="line">  <span class="comment">// 如果上传的文件是图像文件，则进行预览</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; files.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (files[i].<span class="property">type</span>.<span class="title function_">match</span>(<span class="string">&#x27;image.*&#x27;</span>)) &#123;</span><br><span class="line">      <span class="keyword">var</span> reader = <span class="keyword">new</span> <span class="title class_">FileReader</span>();</span><br><span class="line">      <span class="comment">// 使用闭包保存每个 reader 对象的状态</span></span><br><span class="line">      (<span class="keyword">function</span>(<span class="params">reader</span>) &#123;</span><br><span class="line">        <span class="comment">// 将图像文件转换为 Data URL</span></span><br><span class="line">        reader.<span class="title function_">readAsDataURL</span>(files[i]);</span><br><span class="line">        <span class="comment">// 当读取完成时，显示预览图像</span></span><br><span class="line">        reader.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">          <span class="keyword">var</span> imagePreviews = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;imagePreviews&#x27;</span>);</span><br><span class="line">          <span class="comment">// 创建预览图像的容器和图像元素</span></span><br><span class="line">          <span class="keyword">var</span> previewContainer = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line">          previewContainer.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;image-preview&#x27;</span>);</span><br><span class="line">          <span class="keyword">var</span> previewImage = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;img&#x27;</span>);</span><br><span class="line">          previewImage.<span class="property">src</span> = reader.<span class="property">result</span>;</span><br><span class="line">          <span class="comment">// 将图像元素添加到容器中，并将容器添加到预览区域中</span></span><br><span class="line">          previewContainer.<span class="title function_">appendChild</span>(previewImage);</span><br><span class="line">          imagePreviews.<span class="title function_">appendChild</span>(previewContainer);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)(reader);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.image-preview</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#eee</span>;</span><br><span class="line">    <span class="attribute">background-size</span>: contain;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>: center center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个修改后的代码使用了一个<code>for</code>循环来迭代每个上传的文件。对于每个图像文件，我们创建一个新的<code>FileReader</code>对象并调用它的<code>readAsDataURL</code>方法将文件转换为 Data URL。最后，我们创建一个图片<code>img</code>元素，将 Data URL 设置为其源属性，并将图片元素包装在一个<code>&lt;div&gt;</code>元素中添加到预览区域中。<br>同时使用了一个闭包来保存每个 reader 对象的状态。在每个循环中，用一个匿名函数包装<code>reader</code>对象，以便在读取完成事件回调函数中访问正确的数据。这样每个<code>reader</code>对象的状态就不会在过程中被覆盖，每个图像文件都可以正确地显示预览了</p>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/css/" class="">
-              css
+            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="">
+              文件上传
             </a>
           
         </div>
@@ -715,7 +603,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/04/03/css-xue-xi-yi/" target="_blank" title="css学习一">http://example.com/2022/04/03/css-xue-xi-yi/</a>
+    <a href="/2023/04/07/html-js-shi-xian-duo-wen-jian-shang-chuan-yu-lan/" target="_blank" title="html+js实现多文件上传、预览">http://example.com/2023/04/07/html-js-shi-xian-duo-wen-jian-shang-chuan-yu-lan/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -733,44 +621,21 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2022/04/04/css-xue-xi-er/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">css学习二</div>
-      </div>
-      
-      <!-- <div class="content">
-        CSS 学习二继续
-CSS 单位相对长度
-em：当前元素的字体尺寸
-ex：英文字母小x的高度
-ch：数字0的高度
-vw：
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2022/03/27/async-await-de-li-jie/" class="post-nav-link">
+    <a href="/2023/03/30/vue3-zhong-mitt-de-shi-yong/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">async/await的理解</div>
+        <div class="title-text">Vue3中Mitt的使用</div>
       </div>
       <!-- <div class="content">
-        async/await的理解遇到个五连回调的代码，真的是地狱级拷打，用async await进行了一波改写，顿时神清气爽
+        Vue中使用MittMitt是一个在Vue.js应用程序中使用的小型事件总线库。该库允许组件进行通信，而不必过度依赖父级
       </div> -->
     </a>
   </div>
@@ -908,7 +773,7 @@ vw：
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-%E5%AD%A6%E4%B9%A0%E4%B8%80"><span class="toc-text">CSS 学习一</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">基础选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">属性选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">组合选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E7%B1%BB"><span class="toc-text">伪类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E4%BC%AA%E7%B1%BB"><span class="toc-text">条件伪类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%8C%E4%B8%BA%E4%BC%AA%E7%B1%BB"><span class="toc-text">行为伪类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E4%BC%AA%E7%B1%BB"><span class="toc-text">状态伪类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB"><span class="toc-text">结构伪类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%AA%E5%85%83%E7%B4%A0"><span class="toc-text">伪元素</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-Backgrounds"><span class="toc-text">CSS Backgrounds</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%96%9F%E7%84%B6%E5%8F%B9%E6%81%AF%F0%9F%98%92%F0%9F%98%92"><span class="toc-text">喟然叹息😒😒</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#html-js%E5%AE%9E%E7%8E%B0%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E3%80%81%E9%A2%84%E8%A7%88"><span class="toc-text">html+js实现多文件上传、预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E8%A1%A8%E5%8D%95%E5%92%8C%E9%A2%84%E8%A7%88%E5%8C%BA"><span class="toc-text">文件上传表单和预览区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS%E6%A0%B7%E5%BC%8F"><span class="toc-text">CSS样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E9%A2%84%E8%A7%88"><span class="toc-text">JavaScript 实现文件上传和预览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E9%A2%84%E8%A7%88"><span class="toc-text">实现多文件上传和预览</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
