@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Elasticsearch入门 | 于北往南的小屋</title>
+  <title>Echarts创建中国3D地图 | 于北往南的小屋</title>
 
   <link rel="icon" type="image/jpeg" href="https://pic.imgdb.cn/item/64112999ebf10e5d536a3556.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -493,21 +493,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        Elasticsearch入门
+        Echarts创建中国3D地图
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2021-03-23 |
+          <i class="fas fa-calendar"></i> 发表于：2023-06-15 |
         </span>
       
 
@@ -515,12 +515,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/DB/" class="post-detail-header_category">
-              DB
-            </a>
-          
-            <a href="/categories/DB/Elasticsearch/" class="post-detail-header_category">
-              Elasticsearch
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-detail-header_category">
+              前端
             </a>
           
         </span>
@@ -529,7 +525,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 438 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 83 |
           </span>
   
           <span class="min2read">
@@ -560,36 +556,19 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="Elasticsearch-简介"><a href="#Elasticsearch-简介" class="headerlink" title="Elasticsearch 简介"></a>Elasticsearch 简介</h2><p>Elasticsearch 是一款分布式搜索和分析引擎，为所有类型的数据提供快速近乎于实时的搜索和分析。无论是结构化文本还是非结构化文本，数字数据或地理空间数据，Elasticsearch 都能快速有效的对其进行存储和索引。</p>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
-<li>应用或者网站的搜索框</li>
-<li>存储和分析日志、指标和安全事件数据</li>
-<li>机器学习用来实时自动模拟数据行为</li>
-<li>作为存储引擎，实现业务工作流的自动化</li>
-<li>作为地理信息系统（GIS）来管理、整合和分析空间信息</li>
-<li>作为生物信息学研究工具存储和处理遗传数据</li>
-</ul>
-<h3 id="数据存储：文档和索引"><a href="#数据存储：文档和索引" class="headerlink" title="数据存储：文档和索引"></a>数据存储：文档和索引</h3><p>Elasticsearch 不会将信息存储为列数据的行，而是存储已序列化为 JSON 文档的复杂数据结构。索引可以看做是文档的优化集合，每个文档都是字段的集合，这些字段包含数据的键值对。</p>
-<p>Elasticsearch 为每个字段中的所有数据建立索引，并且每个索引字段都具有专门的优化数据结构。例如，文本字段存储在倒排索引中，数字字典和地理字段存储在 BKD 树中。</p>
-<h2 id="Elasticsearch-安装"><a href="#Elasticsearch-安装" class="headerlink" title="Elasticsearch 安装"></a>Elasticsearch 安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>下载链接 <a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/elasticsearch">https://www.elastic.co/cn/downloads/elasticsearch</a></p>
-<h3 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h3><p>直接将下载的压缩包解压，启动<code>bin</code>目录下面的<code>elasticsearch.bat</code></p>
-<p>浏览器打开<a target="_blank" rel="noopener" href="http://localhost:9200/">http://localhost:9200/</a>查看 Elasticsearch 服务信息</p>
-<p><img src="https://img.imgdb.cn/item/6061419f8322e6675c770dcf.jpg" class="lazyload placeholder" data-srcset="https://img.imgdb.cn/item/6061419f8322e6675c770dcf.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="avatar"></p>
-<h3 id="配置远程访问"><a href="#配置远程访问" class="headerlink" title="配置远程访问"></a>配置远程访问</h3><p>打开<code>config</code>目录下的<code>elasticsearch.yml</code>配置文件</p>
-<p><code>修改network.host: 你的IP地址</code></p>
-<p>放开注释<code>#cluster.initial_master_nodes: [&quot;node-1&quot;, &quot;node-2&quot;]</code><br>节点根据情况进行增删</p>
+        <h2 id="Echarts创建中国3D地图"><a href="#Echarts创建中国3D地图" class="headerlink" title="Echarts创建中国3D地图"></a>Echarts创建中国3D地图</h2><p>客户需要做一版3D中国地图，地图要倾斜角度，然后可以支持点击省份，对地图两侧的图表数据进行切换，此外还有一些纹理，顶牌信息面板的效果，不一一赘述，末尾我会放一张成品的图片。</p>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/tags/Elasticsearch/" class="">
-              Elasticsearch
+            <a href="/tags/echarts/" class="">
+              echarts
             </a>
           
-            <a href="/tags/%E7%AC%94%E8%AE%B0/" class="">
-              笔记
+            <a href="/tags/vue3/" class="">
+              vue3
             </a>
           
         </div>
@@ -603,7 +582,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2021/03/23/elasticsearch-ru-men/" target="_blank" title="Elasticsearch入门">http://example.com/2021/03/23/elasticsearch-ru-men/</a>
+    <a href="/2023/06/15/echarts-chuang-jian-zhong-guo-3d-di-tu/" target="_blank" title="Echarts创建中国3D地图">http://example.com/2023/06/15/echarts-chuang-jian-zhong-guo-3d-di-tu/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -621,39 +600,21 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2021/03/23/leetcode-liang-shu-zhi-he/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">LeetCode两数之和</div>
-      </div>
-      
-      <!-- <div class="content">
-        LeetCode 两数之和题目描述给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2021/03/22/bio-nio-aio-dui-bi/" class="post-nav-link">
+    <a href="/2023/04/07/html-js-shi-xian-duo-wen-jian-shang-chuan-yu-lan/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">BIO/NIO/AIO对比</div>
+        <div class="title-text">html+js实现多文件上传、预览</div>
       </div>
       <!-- <div class="content">
-        IO 模型就是使用什么样的通道进行数据的发送和接收，很大程度上决定了程序通信的性能。Java 支持三种网络编程模型：BI
+        html+js实现多文件上传、预览当我们需要上传图片时，一般是通过文件上传的方式上传图片到服务器，但有时候我们需要在上传
       </div> -->
     </a>
   </div>
@@ -791,7 +752,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Elasticsearch-%E7%AE%80%E4%BB%8B"><span class="toc-text">Elasticsearch 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%EF%BC%9A%E6%96%87%E6%A1%A3%E5%92%8C%E7%B4%A2%E5%BC%95"><span class="toc-text">数据存储：文档和索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Elasticsearch-%E5%AE%89%E8%A3%85"><span class="toc-text">Elasticsearch 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8"><span class="toc-text">安装使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE"><span class="toc-text">配置远程访问</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Echarts%E5%88%9B%E5%BB%BA%E4%B8%AD%E5%9B%BD3D%E5%9C%B0%E5%9B%BE"><span class="toc-text">Echarts创建中国3D地图</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
