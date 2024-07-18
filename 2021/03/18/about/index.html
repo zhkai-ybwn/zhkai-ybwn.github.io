@@ -28,9 +28,7 @@
 
   
   
-    
-<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
-
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
   
   
     
@@ -44,10 +42,14 @@
             }
         }
     </style>
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
 
     <!-- import link -->
     
@@ -70,40 +72,26 @@
 </head>
 
   
-  <!-- 依赖于jquery和vue -->
-  
-    
-<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
-
-  
-
-  
-    
-<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
-
-  
-  
   <!-- 预加载动画 -->
-  <!-- 页面预加载动画 -->
-
   
-    <div class="preloader_2" id="loader">
+  
+  <div class="preloader_2" id="loader">
   <div class="loader"></div>
 </div>
 
-  
-<script>
-  var endLoading = function () {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loader').classList.add("loading");
-  }
-  window.addEventListener('DOMContentLoaded',endLoading);
-</script>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
 
   <body>
     <!-- 判断是否为暗黑风格 -->
     <!-- 判断是否为黑夜模式 -->
-<script>
+<script defer>
   let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
   if (isDark) {
@@ -480,8 +468,9 @@
 </header>
         <!-- 内容区域 -->
         
- <!-- prismjs 代码高亮 -->
- 
+<!-- prismjs 代码高亮 -->
+
+
 
 
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
@@ -525,7 +514,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.8k |
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.9k |
           </span>
   
           <span class="min2read">
@@ -543,7 +532,7 @@
   </div>
   
   
-    <script src="/js/bubble/bubble.js"></script>
+    <script defer src="/js/bubble/bubble.js"></script>
   
 </div>
 
@@ -559,24 +548,24 @@
         <h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul>
 <li>张凯/男/1996.12.28</li>
 <li>本科/淮阴工学院（计算机科学与技术）</li>
-<li>工作年限：5 年</li>
+<li>工作年限：6 年</li>
 <li>技术博客：<a target="_blank" rel="noopener" href="https://zhkai-ybwn.github.io//">https://zhkai-ybwn.github.io//</a></li>
 </ul>
 <h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
 <li>手机：13182353591</li>
-<li>邮箱：<a href="mailto:&#50;&#53;&#x37;&#50;&#52;&#50;&#57;&#x32;&#51;&#x35;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#109;">&#50;&#53;&#x37;&#50;&#52;&#50;&#57;&#x32;&#51;&#x35;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#109;</a></li>
+<li>邮箱：<a href="mailto:&#x32;&#53;&#55;&#x32;&#x34;&#50;&#x39;&#x32;&#51;&#x35;&#64;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;">&#x32;&#53;&#55;&#x32;&#x34;&#50;&#x39;&#x32;&#51;&#x35;&#64;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;</a></li>
 <li>QQ/微信：2572429235/13182353591</li>
 </ul>
-<h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><p>南京联迪信息股份有限公司（2018 年 6 月 ~ 2021 年 5 月）<br>软通动力信息技术（集团）股份有限公司（2021 年 5 月 ~ 2022 年 7 月）<br>北京优锘科技有限公司（2022 年 7 月 ~ 至今）</p>
-<h2 id="北京优锘科技有限公司-苏沪开发组–全栈工程师及开发组长（-2022年7月-至今-）"><a href="#北京优锘科技有限公司-苏沪开发组–全栈工程师及开发组长（-2022年7月-至今-）" class="headerlink" title="北京优锘科技有限公司-苏沪开发组–全栈工程师及开发组长（ 2022年7月 ~ 至今 ）"></a>北京优锘科技有限公司-苏沪开发组–全栈工程师及开发组长（ 2022年7月 ~ 至今 ）</h2><h3 id="华泰证券可视化大屏"><a href="#华泰证券可视化大屏" class="headerlink" title="华泰证券可视化大屏"></a>华泰证券可视化大屏</h3><p>该项目是针对华泰证券相关业务的一个可视化大屏项目，个人负责开发部分Echarts图表以及3D地图模型相关需求。</p>
+<h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><p>南京联迪信息股份有限公司（2018 年 6 月 ~ 2021 年 5 月）<br>软通动力信息技术（集团）股份有限公司（2021 年 5 月 ~ 2022 年 7 月）<br>北京优锘科技有限公司（2022 年 7 月 ~ 2023 年 8 月）<br>南京福加自动化科技有限公司（2023 年 8 月 ~ 2024 年 8 月）</p>
+<h2 id="南京福加自动化科技有限公司-研发部–开发工程师（2023-年-8-月-2024-年-8-月）"><a href="#南京福加自动化科技有限公司-研发部–开发工程师（2023-年-8-月-2024-年-8-月）" class="headerlink" title="南京福加自动化科技有限公司-研发部–开发工程师（2023 年 8 月 ~ 2024 年 8 月）"></a>南京福加自动化科技有限公司-研发部–开发工程师（2023 年 8 月 ~ 2024 年 8 月）</h2><h2 id="北京优锘科技有限公司-苏沪开发组–全栈工程师及开发组长（2022-年-7-月-2023-年-8-月）"><a href="#北京优锘科技有限公司-苏沪开发组–全栈工程师及开发组长（2022-年-7-月-2023-年-8-月）" class="headerlink" title="北京优锘科技有限公司-苏沪开发组–全栈工程师及开发组长（2022 年 7 月 ~ 2023 年 8 月）"></a>北京优锘科技有限公司-苏沪开发组–全栈工程师及开发组长（2022 年 7 月 ~ 2023 年 8 月）</h2><h3 id="华泰证券可视化大屏"><a href="#华泰证券可视化大屏" class="headerlink" title="华泰证券可视化大屏"></a>华泰证券可视化大屏</h3><p>该项目是针对华泰证券相关业务的一个可视化大屏项目，个人负责开发部分 Echarts 图表以及 3D 地图模型相关需求。</p>
 <h4 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h4><ul>
 <li>前端：Vue3 + Scss + JS + Echarts</li>
 <li>后端：数据采集平台</li>
 </ul>
 <h4 id="项目职责"><a href="#项目职责" class="headerlink" title="项目职责"></a>项目职责</h4><ul>
 <li>把控整个项目的进度以及需求迭代</li>
-<li>定制开发3D地图的飞线、信息顶牌、热力图，以及经纬度与模型坐标的转换工作。</li>
-<li>需求完成后，实时支持现场问题，主要是bug修复以及和数据采集平台进行数据对接工作。</li>
+<li>定制开发 3D 地图的飞线、信息顶牌、热力图，以及经纬度与模型坐标的转换工作。</li>
+<li>需求完成后，实时支持现场问题，主要是 bug 修复以及和数据采集平台进行数据对接工作。</li>
 </ul>
 <h3 id="中国银联运营可视化管理平台"><a href="#中国银联运营可视化管理平台" class="headerlink" title="中国银联运营可视化管理平台"></a>中国银联运营可视化管理平台</h3><p>该项目为定制化在线可视化图标配置平台，可以自行配置生成大屏图表，配置后端管理系统，对不同人员权限进<br>行管理，人员管理，静态资源管理等，主要特色为可视化自由配置平台。</p>
 <h4 id="项目框架-1"><a href="#项目框架-1" class="headerlink" title="项目框架"></a>项目框架</h4><ul>
@@ -598,25 +587,25 @@
 </ul>
 <h4 id="项目职责-2"><a href="#项目职责-2" class="headerlink" title="项目职责"></a>项目职责</h4><ul>
 <li>对接开发后台管理系统，包括登录和用户管理功能</li>
-<li>使用JWT进行鉴权，支持token过期，另外使用Ehcache进行缓存，减少每次鉴权对数据库的压力</li>
-<li>用户的CRUD</li>
+<li>使用 JWT 进行鉴权，支持 token 过期，另外使用 Ehcache 进行缓存，减少每次鉴权对数据库的压力</li>
+<li>用户的 CRUD</li>
 </ul>
-<h2 id="南京软通动力信息技术有限公司–消费者云平台实施部–Java工程师（-2021年5月-2022年7月-）"><a href="#南京软通动力信息技术有限公司–消费者云平台实施部–Java工程师（-2021年5月-2022年7月-）" class="headerlink" title="南京软通动力信息技术有限公司–消费者云平台实施部–Java工程师（ 2021年5月 ~ 2022年7月 ）"></a>南京软通动力信息技术有限公司–消费者云平台实施部–Java工程师（ 2021年5月 ~ 2022年7月 ）</h2><h3 id="开发者联盟管理台"><a href="#开发者联盟管理台" class="headerlink" title="开发者联盟管理台"></a>开发者联盟管理台</h3><p>该项目是华为开发者联盟的后台管理系统</p>
-<h4 id="项目架构"><a href="#项目架构" class="headerlink" title="项目架构"></a>项目架构</h4><p>前端：AngularJs/Angular11 + NG-ZORRO组件库 + TS<br>后端：Java，华为自研NUWA框架<br>数据存储：Mysql</p>
+<h2 id="南京软通动力信息技术有限公司–消费者云平台实施部–Java-工程师（-2021-年-5-月-2022-年-7-月-）"><a href="#南京软通动力信息技术有限公司–消费者云平台实施部–Java-工程师（-2021-年-5-月-2022-年-7-月-）" class="headerlink" title="南京软通动力信息技术有限公司–消费者云平台实施部–Java 工程师（ 2021 年 5 月 ~ 2022 年 7 月 ）"></a>南京软通动力信息技术有限公司–消费者云平台实施部–Java 工程师（ 2021 年 5 月 ~ 2022 年 7 月 ）</h2><h3 id="开发者联盟管理台"><a href="#开发者联盟管理台" class="headerlink" title="开发者联盟管理台"></a>开发者联盟管理台</h3><p>该项目是华为开发者联盟的后台管理系统</p>
+<h4 id="项目架构"><a href="#项目架构" class="headerlink" title="项目架构"></a>项目架构</h4><p>前端：AngularJs/Angular11 + NG-ZORRO 组件库 + TS<br>后端：Java，华为自研 NUWA 框架<br>数据存储：Mysql</p>
 <h3 id="项目职责-3"><a href="#项目职责-3" class="headerlink" title="项目职责"></a>项目职责</h3><ul>
-<li>Angular框架的升级工作（AngularJS升级到Angular11）。通过不断的学习和总结，快速上手并掌<br>握了Angular框架，并成为该项目的主要开发和日常支撑。</li>
-<li>参与该项目的代码CleanCode工作，修改冗余繁琐，不“整洁”的代码，定期组织项<br>目成员进行分享学习会议。</li>
+<li>Angular 框架的升级工作（AngularJS 升级到 Angular11）。通过不断的学习和总结，快速上手并掌<br>握了 Angular 框架，并成为该项目的主要开发和日常支撑。</li>
+<li>参与该项目的代码 CleanCode 工作，修改冗余繁琐，不“整洁”的代码，定期组织项<br>目成员进行分享学习会议。</li>
 </ul>
 <h3 id="开发者联盟画像系统"><a href="#开发者联盟画像系统" class="headerlink" title="开发者联盟画像系统"></a>开发者联盟画像系统</h3><h4 id="项目架构-1"><a href="#项目架构-1" class="headerlink" title="项目架构"></a>项目架构</h4><ul>
-<li>前端：Angular11 + NG-ZORRO组件库</li>
-<li>后端：Java，华为自研NUWA框架</li>
+<li>前端：Angular11 + NG-ZORRO 组件库</li>
+<li>后端：Java，华为自研 NUWA 框架</li>
 <li>数据存储：Mysql</li>
 </ul>
 <h4 id="项目职责-4"><a href="#项目职责-4" class="headerlink" title="项目职责"></a>项目职责</h4><ul>
 <li>人群导入页面、基础属性批量创建页面、线索管理菜单等需求的开发工作，包括前端的<br>页面以及后台接口的透传校验。</li>
 </ul>
-<h3 id="其他项目"><a href="#其他项目" class="headerlink" title="其他项目"></a>其他项目</h3><p>开发者联盟资讯管理台的田主，负责该项目的开发和日常问题支持，包括ckeditor版本升级，<br>Angular版本升级以及资讯创建功能。<br>开发者联盟合同管理台技术支持，负责部分需求开发以及主导Angular框架的升级工作。</p>
-<h2 id="南京联迪信息股份有限公司–数据工程研究中心–高级程序员-（-2018年6月-2021年5月-）"><a href="#南京联迪信息股份有限公司–数据工程研究中心–高级程序员-（-2018年6月-2021年5月-）" class="headerlink" title="南京联迪信息股份有限公司–数据工程研究中心–高级程序员 （ 2018年6月 ~ 2021年5月 ）"></a>南京联迪信息股份有限公司–数据工程研究中心–高级程序员 （ 2018年6月 ~ 2021年5月 ）</h2><h3 id="3M-POS-数据收集系统"><a href="#3M-POS-数据收集系统" class="headerlink" title="3M POS 数据收集系统"></a>3M POS 数据收集系统</h3><p>帮助 3M 公司使用系统自动处理经销商的销售数据。包括对数据的自动定时抽取上传、校验、转换等基础，.<br>以及错误数据回滚、经销商管理、日志管理等配套功能。</p>
+<h3 id="其他项目"><a href="#其他项目" class="headerlink" title="其他项目"></a>其他项目</h3><p>开发者联盟资讯管理台的田主，负责该项目的开发和日常问题支持，包括 ckeditor 版本升级，<br>Angular 版本升级以及资讯创建功能。<br>开发者联盟合同管理台技术支持，负责部分需求开发以及主导 Angular 框架的升级工作。</p>
+<h2 id="南京联迪信息股份有限公司–数据工程研究中心–高级程序员-（-2018-年-6-月-2021-年-5-月-）"><a href="#南京联迪信息股份有限公司–数据工程研究中心–高级程序员-（-2018-年-6-月-2021-年-5-月-）" class="headerlink" title="南京联迪信息股份有限公司–数据工程研究中心–高级程序员 （ 2018 年 6 月 ~ 2021 年 5 月 ）"></a>南京联迪信息股份有限公司–数据工程研究中心–高级程序员 （ 2018 年 6 月 ~ 2021 年 5 月 ）</h2><h3 id="3M-POS-数据收集系统"><a href="#3M-POS-数据收集系统" class="headerlink" title="3M POS 数据收集系统"></a>3M POS 数据收集系统</h3><p>帮助 3M 公司使用系统自动处理经销商的销售数据。包括对数据的自动定时抽取上传、校验、转换等基础，.<br>以及错误数据回滚、经销商管理、日志管理等配套功能。</p>
 <h4 id="项目框架-3"><a href="#项目框架-3" class="headerlink" title="项目框架"></a>项目框架</h4><ul>
 <li>前端：Vue + Element-ui</li>
 <li>后端：SpringBoot + Jpa + Hibernate + Swagger</li>
@@ -665,7 +654,7 @@
 <li>API：Python + FastApi</li>
 <li>数据库：Mysql + ElasticSearch</li>
 </ul>
-<h3 id="项目职责-8"><a href="#项目职责-8" class="headerlink" title="项目职责"></a>项目职责</h3><p>整个项目的搭建和前后台开发，加深了对于ES的了解和使用，学会了使用FastApi进行后台的开发。</p>
+<h3 id="项目职责-8"><a href="#项目职责-8" class="headerlink" title="项目职责"></a>项目职责</h3><p>整个项目的搭建和前后台开发，加深了对于 ES 的了解和使用，学会了使用 FastApi 进行后台的开发。</p>
 <h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2><ul>
 <li>开发语言：Java/C#/Python</li>
 <li>前端框架：Vue/Angular</li>
@@ -766,7 +755,7 @@
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
-<script src="/js/shareJs/social-share.min.js"></script>
+<script defer src="/js/shareJs/social-share.min.js"></script>
 </script>
 
 <style>
@@ -788,7 +777,8 @@
     
   </div>
 
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
 
 
   </div>
@@ -885,7 +875,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF"><span class="toc-text">个人信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">联系方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86"><span class="toc-text">工作经历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%97%E4%BA%AC%E4%BC%98%E9%94%98%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E8%8B%8F%E6%B2%AA%E5%BC%80%E5%8F%91%E7%BB%84%E2%80%93%E5%85%A8%E6%A0%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%8F%8A%E5%BC%80%E5%8F%91%E7%BB%84%E9%95%BF%EF%BC%88-2022%E5%B9%B47%E6%9C%88-%E8%87%B3%E4%BB%8A-%EF%BC%89"><span class="toc-text">北京优锘科技有限公司-苏沪开发组–全栈工程师及开发组长（ 2022年7月 ~ 至今 ）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8E%E6%B3%B0%E8%AF%81%E5%88%B8%E5%8F%AF%E8%A7%86%E5%8C%96%E5%A4%A7%E5%B1%8F"><span class="toc-text">华泰证券可视化大屏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6"><span class="toc-text">项目框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%81%94%E8%BF%90%E8%90%A5%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0"><span class="toc-text">中国银联运营可视化管理平台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-1"><span class="toc-text">项目框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-1"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E6%B5%B7%E8%BD%A8%E9%81%93%E4%BA%A4%E9%80%9A%E7%AB%99%E5%86%85%E5%8F%AF%E8%A7%86%E5%8C%96%E7%B3%BB%E7%BB%9F"><span class="toc-text">上海轨道交通站内可视化系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-2"><span class="toc-text">项目框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-2"><span class="toc-text">项目职责</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%97%E4%BA%AC%E8%BD%AF%E9%80%9A%E5%8A%A8%E5%8A%9B%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E2%80%93%E6%B6%88%E8%B4%B9%E8%80%85%E4%BA%91%E5%B9%B3%E5%8F%B0%E5%AE%9E%E6%96%BD%E9%83%A8%E2%80%93Java%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88-2021%E5%B9%B45%E6%9C%88-2022%E5%B9%B47%E6%9C%88-%EF%BC%89"><span class="toc-text">南京软通动力信息技术有限公司–消费者云平台实施部–Java工程师（ 2021年5月 ~ 2022年7月 ）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%80%85%E8%81%94%E7%9B%9F%E7%AE%A1%E7%90%86%E5%8F%B0"><span class="toc-text">开发者联盟管理台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84"><span class="toc-text">项目架构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-3"><span class="toc-text">项目职责</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%80%85%E8%81%94%E7%9B%9F%E7%94%BB%E5%83%8F%E7%B3%BB%E7%BB%9F"><span class="toc-text">开发者联盟画像系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84-1"><span class="toc-text">项目架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-4"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE"><span class="toc-text">其他项目</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%97%E4%BA%AC%E8%81%94%E8%BF%AA%E4%BF%A1%E6%81%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E2%80%93%E6%95%B0%E6%8D%AE%E5%B7%A5%E7%A8%8B%E7%A0%94%E7%A9%B6%E4%B8%AD%E5%BF%83%E2%80%93%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E5%91%98-%EF%BC%88-2018%E5%B9%B46%E6%9C%88-2021%E5%B9%B45%E6%9C%88-%EF%BC%89"><span class="toc-text">南京联迪信息股份有限公司–数据工程研究中心–高级程序员 （ 2018年6月 ~ 2021年5月 ）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3M-POS-%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F"><span class="toc-text">3M POS 数据收集系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-3"><span class="toc-text">项目框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-5"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ANA-%E8%88%AA%E7%A9%BA%E5%88%B0%E7%9D%80%E6%A1%88%E5%86%85"><span class="toc-text">ANA 航空到着案内</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-4"><span class="toc-text">项目框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-6"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E4%B8%8E%E9%83%A8%E7%BD%B2"><span class="toc-text">爬虫开发与部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-5"><span class="toc-text">项目框架</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-7"><span class="toc-text">项目职责</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ElasticSearch-%E7%AE%A1%E7%90%86%E5%8F%8A%E6%96%B0%E9%97%BB%E6%A3%80%E7%B4%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">ElasticSearch 管理及新闻检索平台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-6"><span class="toc-text">项目框架</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-8"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E8%83%BD%E6%B8%85%E5%8D%95"><span class="toc-text">技能清单</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF"><span class="toc-text">个人信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">联系方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86"><span class="toc-text">工作经历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%97%E4%BA%AC%E7%A6%8F%E5%8A%A0%E8%87%AA%E5%8A%A8%E5%8C%96%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E7%A0%94%E5%8F%91%E9%83%A8%E2%80%93%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%882023-%E5%B9%B4-8-%E6%9C%88-2024-%E5%B9%B4-8-%E6%9C%88%EF%BC%89"><span class="toc-text">南京福加自动化科技有限公司-研发部–开发工程师（2023 年 8 月 ~ 2024 年 8 月）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%97%E4%BA%AC%E4%BC%98%E9%94%98%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E8%8B%8F%E6%B2%AA%E5%BC%80%E5%8F%91%E7%BB%84%E2%80%93%E5%85%A8%E6%A0%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%8F%8A%E5%BC%80%E5%8F%91%E7%BB%84%E9%95%BF%EF%BC%882022-%E5%B9%B4-7-%E6%9C%88-2023-%E5%B9%B4-8-%E6%9C%88%EF%BC%89"><span class="toc-text">北京优锘科技有限公司-苏沪开发组–全栈工程师及开发组长（2022 年 7 月 ~ 2023 年 8 月）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8E%E6%B3%B0%E8%AF%81%E5%88%B8%E5%8F%AF%E8%A7%86%E5%8C%96%E5%A4%A7%E5%B1%8F"><span class="toc-text">华泰证券可视化大屏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6"><span class="toc-text">项目框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%81%94%E8%BF%90%E8%90%A5%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0"><span class="toc-text">中国银联运营可视化管理平台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-1"><span class="toc-text">项目框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-1"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E6%B5%B7%E8%BD%A8%E9%81%93%E4%BA%A4%E9%80%9A%E7%AB%99%E5%86%85%E5%8F%AF%E8%A7%86%E5%8C%96%E7%B3%BB%E7%BB%9F"><span class="toc-text">上海轨道交通站内可视化系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-2"><span class="toc-text">项目框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-2"><span class="toc-text">项目职责</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%97%E4%BA%AC%E8%BD%AF%E9%80%9A%E5%8A%A8%E5%8A%9B%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E2%80%93%E6%B6%88%E8%B4%B9%E8%80%85%E4%BA%91%E5%B9%B3%E5%8F%B0%E5%AE%9E%E6%96%BD%E9%83%A8%E2%80%93Java-%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88-2021-%E5%B9%B4-5-%E6%9C%88-2022-%E5%B9%B4-7-%E6%9C%88-%EF%BC%89"><span class="toc-text">南京软通动力信息技术有限公司–消费者云平台实施部–Java 工程师（ 2021 年 5 月 ~ 2022 年 7 月 ）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%80%85%E8%81%94%E7%9B%9F%E7%AE%A1%E7%90%86%E5%8F%B0"><span class="toc-text">开发者联盟管理台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84"><span class="toc-text">项目架构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-3"><span class="toc-text">项目职责</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%80%85%E8%81%94%E7%9B%9F%E7%94%BB%E5%83%8F%E7%B3%BB%E7%BB%9F"><span class="toc-text">开发者联盟画像系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84-1"><span class="toc-text">项目架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-4"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE"><span class="toc-text">其他项目</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%97%E4%BA%AC%E8%81%94%E8%BF%AA%E4%BF%A1%E6%81%AF%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E2%80%93%E6%95%B0%E6%8D%AE%E5%B7%A5%E7%A8%8B%E7%A0%94%E7%A9%B6%E4%B8%AD%E5%BF%83%E2%80%93%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E5%91%98-%EF%BC%88-2018-%E5%B9%B4-6-%E6%9C%88-2021-%E5%B9%B4-5-%E6%9C%88-%EF%BC%89"><span class="toc-text">南京联迪信息股份有限公司–数据工程研究中心–高级程序员 （ 2018 年 6 月 ~ 2021 年 5 月 ）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3M-POS-%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F"><span class="toc-text">3M POS 数据收集系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-3"><span class="toc-text">项目框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-5"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ANA-%E8%88%AA%E7%A9%BA%E5%88%B0%E7%9D%80%E6%A1%88%E5%86%85"><span class="toc-text">ANA 航空到着案内</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-4"><span class="toc-text">项目框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-6"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E4%B8%8E%E9%83%A8%E7%BD%B2"><span class="toc-text">爬虫开发与部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-5"><span class="toc-text">项目框架</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-7"><span class="toc-text">项目职责</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ElasticSearch-%E7%AE%A1%E7%90%86%E5%8F%8A%E6%96%B0%E9%97%BB%E6%A3%80%E7%B4%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">ElasticSearch 管理及新闻检索平台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6-6"><span class="toc-text">项目框架</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%81%8C%E8%B4%A3-8"><span class="toc-text">项目职责</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E8%83%BD%E6%B8%85%E5%8D%95"><span class="toc-text">技能清单</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -911,6 +901,27 @@
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2024/07/04/ref-he-reactive-de-qu-bie/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-29e78b52051ce542adf6d786d61fbd19_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-29e78b52051ce542adf6d786d61fbd19_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">07-04</span>
+                
+              </div>
+              <a class="post-title" href="/2024/07/04/ref-he-reactive-de-qu-bie/">ref和reactive的区别</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -996,27 +1007,6 @@
             </div>
           </div>
         
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/2023/03/20/vue3-swiper-kai-fa-lun-bo-lie-biao-zu-jian/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">03-20</span>
-                
-              </div>
-              <a class="post-title" href="/2023/03/20/vue3-swiper-kai-fa-lun-bo-lie-biao-zu-jian/">Vue3 + Swiper开发轮播列表组件</a>
-            </div>
-          </div>
-        
       </div>
     </div>
   </section>
@@ -1026,7 +1016,7 @@
 </aside>
 
   <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
+  <script defer src="/js/wrapImage.js"></script>
 </div>
 
 <!-- 文章详情页背景图 -->
@@ -1189,7 +1179,7 @@
   
     <!-- 底部鱼儿跳动效果，依赖于jquery-->
 <div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
-<script>
+<script defer>
   var RENDERER = {
     POINT_INTERVAL: 5,
     FISH_COUNT: 3,
@@ -1362,6 +1352,12 @@
         
       
         
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+        
           
             <!-- 不蒜子统计 -->
             <!-- 不蒜子统计 -->
@@ -1376,12 +1372,6 @@
           
         
       
-        
-          <div class="footer-custom">
-            
-          </div>
-        
-      
     </div>
   </div>
 
@@ -1389,58 +1379,45 @@
 
     <!-- 渲染暗黑按钮 -->
     
-      <div class="dark">
+      <div class="dark" onclick="toggleDarkMode()">
   <div class="dark-content">
-    <i class="fas fa-moon" aria-hidden="true"></i>
-    <!-- <span>关灯</span> -->
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
   </div>
-  
 </div>
 
-<script>
+<script defer>
   $(function() {
-    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
     if (isDark) {
-      $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
     }
-    $('.dark').click(function() {
-      if ($(document.body).is('.darkModel')) {
-        $(document.body).removeClass('darkModel');
-        localStorage.setItem('dark', false);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      } else {
-        $(document.body).addClass('darkModel');
-        localStorage.setItem('dark', true);
-        $(".dark-content").replaceWith(
-          `
-          <div class='dark-content'>
-            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-          </div>
-          `
-        );
-      }
-    })
-  })
+  }
 </script>
+
     
     <!-- 渲染回到顶部按钮 -->
     
       <div class="goTop top-btn-color" pointer>
   <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </div>
-<script src="/js/goTop.js"></script>
+<script defer src="/js/goTop.js"></script>
 
     
     <!-- 渲染左下角音乐播放器 -->
@@ -1494,13 +1471,13 @@
     bottom: 300px;
   }
 </style> -->
-<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+<script defer src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
     
 
     <!-- 图片放大 -->
     
-      <script src="/js/fancybox/jquery.fancybox.min.js"></script>
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     
 
     <!-- 百度解析 -->
@@ -1508,7 +1485,7 @@
 
     <!-- Baidu Push -->
 
-<script>
+<script async>
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -1525,7 +1502,7 @@
     
     <!-- 背景彩带 -->
     
-      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+      <script async type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
     
 
     <script src="/js/utils/index.js"></script>
@@ -1739,6 +1716,61 @@
   })
 </script>
 
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
 <!-- 输入框打字特效 -->
 <!-- 输入框打字特效 -->
 
@@ -1840,15 +1872,15 @@
 <!-- 评论所需js -->
 
   
-    <script type="text/javascript">
-  var utteranceCommon = {};
+        <script type="text/javascript">
+  var utteranceComment = {};
 
   function check_utterance() {
     let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
     if (isDark) {
-      utteranceCommon.Theme = 'github-dark';
+      utteranceComment.Theme = 'github-dark';
     } else {
-      utteranceCommon.Theme = 'github-light';
+      utteranceComment.Theme = 'github-light';
     }
 
     return document.getElementById("gitment-container");
@@ -1863,7 +1895,7 @@
       utterances.type = 'text/javascript';
       utterances.async = true;
       utterances.setAttribute('issue-term', 'pathname')
-      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('theme', utteranceComment.Theme)
       utterances.setAttribute('repo', '')
       utterances.crossorigin = 'anonymous';
       utterances.src = 'https://utteranc.es/client.js';
@@ -1878,7 +1910,7 @@
     if (!HEAD) return;
     const message = {
       type: 'set-theme',
-      theme: utteranceCommon.Theme
+      theme: utteranceComment.Theme
     };
     const utteranceIframe = document.querySelector('iframe');
     utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
@@ -1902,7 +1934,7 @@
     max-width: inherit !important;
   }
 </style>
-  
+      
 
 
 <!-- 鼠标点击特效 -->
@@ -1910,8 +1942,8 @@
 
   
     <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script src="/js/cursor/explosion.min.js"></script>
+    <script async src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script async src="/js/cursor/explosion.min.js"></script>
   
 
 
@@ -1982,9 +2014,7 @@
 
   <script src="/js/pjax@0.2.8/index.js"></script>
   
-    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
+    <div class="pjax-animate">
   
     <div class="loading-circle"><div id="loader-circle"></div></div>
     <script>
